@@ -1,0 +1,3234 @@
+nohup: ignoring input
+/home/zl986/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.57s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.68s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.81s/it]
+Command Output:
+[2025-04-25 06:50:03,198] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-25 06:50:05,096] [WARNING] [runner.py:215:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+[2025-04-25 06:50:05,096] [INFO] [runner.py:607:main] cmd = /home/zl986/miniconda3/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMSwgMiwgMywgNCwgNSwgNiwgN119 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None llava/train/train_mem.py --lora_enable True --lora_r 128 --lora_alpha 256 --mm_projector_lr 2e-5 --deepspeed ./scripts/zero3.json --model_name_or_path liuhaotian/llava-v1.5-7b --version v1 --data_path /home/zl986/backdoor-test/data2.json --image_folder /home/zl986/backdoor-test/waymo-images --vision_tower openai/clip-vit-large-patch14-336 --mm_projector_type mlp2x_gelu --mm_vision_select_layer -2 --mm_use_im_start_end False --mm_use_im_patch_token False --image_aspect_ratio pad --group_by_modality_length True --bf16 True --output_dir /home/zl986/backdoor-test/llava-driving-ft-5 --num_train_epochs 50 --per_device_train_batch_size 16 --per_device_eval_batch_size 4 --gradient_accumulation_steps 1 --evaluation_strategy no --save_strategy steps --save_steps 100 --learning_rate 2e-4 --weight_decay 0. --warmup_ratio 0.03 --lr_scheduler_type cosine --logging_steps 1 --tf32 True --model_max_length 2048 --gradient_checkpointing True --dataloader_num_workers 4 --lazy_preprocess True --report_to wandb
+[2025-04-25 06:50:06,689] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-25 06:50:08,512] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1, 2, 3, 4, 5, 6, 7]}
+[2025-04-25 06:50:08,513] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=8, node_rank=0
+[2025-04-25 06:50:08,513] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1, 2, 3, 4, 5, 6, 7]})
+[2025-04-25 06:50:08,513] [INFO] [launch.py:164:main] dist_world_size=8
+[2025-04-25 06:50:08,513] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+[2025-04-25 06:50:08,514] [INFO] [launch.py:256:main] process 7599 spawned with command: ['/home/zl986/miniconda3/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=0', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '2e-5', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', 'liuhaotian/llava-v1.5-7b', '--version', 'v1', '--data_path', '/home/zl986/backdoor-test/data2.json', '--image_folder', '/home/zl986/backdoor-test/waymo-images', '--vision_tower', 'openai/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/home/zl986/backdoor-test/llava-driving-ft-5', '--num_train_epochs', '50', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '100', '--learning_rate', '2e-4', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-04-25 06:50:08,514] [INFO] [launch.py:256:main] process 7600 spawned with command: ['/home/zl986/miniconda3/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=1', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '2e-5', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', 'liuhaotian/llava-v1.5-7b', '--version', 'v1', '--data_path', '/home/zl986/backdoor-test/data2.json', '--image_folder', '/home/zl986/backdoor-test/waymo-images', '--vision_tower', 'openai/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/home/zl986/backdoor-test/llava-driving-ft-5', '--num_train_epochs', '50', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '100', '--learning_rate', '2e-4', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-04-25 06:50:08,515] [INFO] [launch.py:256:main] process 7601 spawned with command: ['/home/zl986/miniconda3/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=2', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '2e-5', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', 'liuhaotian/llava-v1.5-7b', '--version', 'v1', '--data_path', '/home/zl986/backdoor-test/data2.json', '--image_folder', '/home/zl986/backdoor-test/waymo-images', '--vision_tower', 'openai/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/home/zl986/backdoor-test/llava-driving-ft-5', '--num_train_epochs', '50', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '100', '--learning_rate', '2e-4', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-04-25 06:50:08,516] [INFO] [launch.py:256:main] process 7602 spawned with command: ['/home/zl986/miniconda3/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=3', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '2e-5', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', 'liuhaotian/llava-v1.5-7b', '--version', 'v1', '--data_path', '/home/zl986/backdoor-test/data2.json', '--image_folder', '/home/zl986/backdoor-test/waymo-images', '--vision_tower', 'openai/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/home/zl986/backdoor-test/llava-driving-ft-5', '--num_train_epochs', '50', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '100', '--learning_rate', '2e-4', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-04-25 06:50:08,516] [INFO] [launch.py:256:main] process 7603 spawned with command: ['/home/zl986/miniconda3/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=4', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '2e-5', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', 'liuhaotian/llava-v1.5-7b', '--version', 'v1', '--data_path', '/home/zl986/backdoor-test/data2.json', '--image_folder', '/home/zl986/backdoor-test/waymo-images', '--vision_tower', 'openai/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/home/zl986/backdoor-test/llava-driving-ft-5', '--num_train_epochs', '50', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '100', '--learning_rate', '2e-4', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-04-25 06:50:08,517] [INFO] [launch.py:256:main] process 7604 spawned with command: ['/home/zl986/miniconda3/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=5', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '2e-5', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', 'liuhaotian/llava-v1.5-7b', '--version', 'v1', '--data_path', '/home/zl986/backdoor-test/data2.json', '--image_folder', '/home/zl986/backdoor-test/waymo-images', '--vision_tower', 'openai/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/home/zl986/backdoor-test/llava-driving-ft-5', '--num_train_epochs', '50', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '100', '--learning_rate', '2e-4', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-04-25 06:50:08,517] [INFO] [launch.py:256:main] process 7605 spawned with command: ['/home/zl986/miniconda3/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=6', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '2e-5', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', 'liuhaotian/llava-v1.5-7b', '--version', 'v1', '--data_path', '/home/zl986/backdoor-test/data2.json', '--image_folder', '/home/zl986/backdoor-test/waymo-images', '--vision_tower', 'openai/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/home/zl986/backdoor-test/llava-driving-ft-5', '--num_train_epochs', '50', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '100', '--learning_rate', '2e-4', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-04-25 06:50:08,518] [INFO] [launch.py:256:main] process 7606 spawned with command: ['/home/zl986/miniconda3/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=7', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '2e-5', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', 'liuhaotian/llava-v1.5-7b', '--version', 'v1', '--data_path', '/home/zl986/backdoor-test/data2.json', '--image_folder', '/home/zl986/backdoor-test/waymo-images', '--vision_tower', 'openai/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/home/zl986/backdoor-test/llava-driving-ft-5', '--num_train_epochs', '50', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '100', '--learning_rate', '2e-4', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-04-25 06:50:13,281] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-25 06:50:13,380] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-25 06:50:13,382] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-25 06:50:13,383] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-25 06:50:13,428] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-25 06:50:13,501] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-25 06:50:13,509] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-25 06:50:13,563] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-25 06:50:14,056] [INFO] [comm.py:658:init_distributed] cdb=None
+[2025-04-25 06:50:14,173] [INFO] [comm.py:658:init_distributed] cdb=None
+[2025-04-25 06:50:14,176] [INFO] [comm.py:658:init_distributed] cdb=None
+[2025-04-25 06:50:14,177] [INFO] [comm.py:689:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[2025-04-25 06:50:14,179] [INFO] [comm.py:658:init_distributed] cdb=None
+[2025-04-25 06:50:14,307] [INFO] [comm.py:658:init_distributed] cdb=None
+[2025-04-25 06:50:14,319] [INFO] [comm.py:658:init_distributed] cdb=None
+[2025-04-25 06:50:14,335] [INFO] [comm.py:658:init_distributed] cdb=None
+[2025-04-25 06:50:14,405] [INFO] [comm.py:658:init_distributed] cdb=None
+[2025-04-25 06:50:15,269] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:50:15,399] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:50:15,406] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:50:15,440] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:50:15,446] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:50:15,462] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:50:15,781] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:50:15,919] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:50:17,213] [INFO] [partition_parameters.py:348:__exit__] finished initializing model - num_params = 295, num_elems = 6.76B
+Adding LoRA adapters...
+[2025-04-25 06:51:06,684] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:51:06,838] [INFO] [partition_parameters.py:348:__exit__] finished initializing model - num_params = 686, num_elems = 7.06B
+[2025-04-25 06:51:07,717] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:51:07,717] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:51:07,808] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:51:07,904] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:51:08,065] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:51:08,232] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+[2025-04-25 06:51:08,246] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 8
+Formatting inputs...Skip in lazy mode
+Parameter Offload: Total persistent parameters: 599040 in 312 params
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 2.0849, 'learning_rate': 5.555555555555556e-06, 'epoch': 0.04}
+[2025-04-25 06:51:57,854] [WARNING] [stage3.py:2139:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 1.9885, 'learning_rate': 1.1111111111111112e-05, 'epoch': 0.08}
+{'loss': 2.0625, 'learning_rate': 1.6666666666666667e-05, 'epoch': 0.12}
+{'loss': 1.8594, 'learning_rate': 2.2222222222222223e-05, 'epoch': 0.17}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 1.7627, 'learning_rate': 2.777777777777778e-05, 'epoch': 0.21}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 1.5439, 'learning_rate': 3.3333333333333335e-05, 'epoch': 0.25}
+{'loss': 1.3821, 'learning_rate': 3.888888888888889e-05, 'epoch': 0.29}
+{'loss': 1.2117, 'learning_rate': 4.4444444444444447e-05, 'epoch': 0.33}
+[2025-04-25 06:53:31,379] [WARNING] [stage3.py:2139:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 1.1281, 'learning_rate': 5e-05, 'epoch': 0.38}
+{'loss': 1.1182, 'learning_rate': 5.555555555555556e-05, 'epoch': 0.42}
+{'loss': 1.0351, 'learning_rate': 6.111111111111112e-05, 'epoch': 0.46}
+{'loss': 1.0632, 'learning_rate': 6.666666666666667e-05, 'epoch': 0.5}
+{'loss': 1.0674, 'learning_rate': 7.222222222222222e-05, 'epoch': 0.54}
+[2025-04-25 06:54:38,089] [WARNING] [stage3.py:2139:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.9859, 'learning_rate': 7.777777777777778e-05, 'epoch': 0.58}
+{'loss': 0.9077, 'learning_rate': 8.333333333333334e-05, 'epoch': 0.62}
+{'loss': 1.0122, 'learning_rate': 8.888888888888889e-05, 'epoch': 0.67}
+{'loss': 1.0342, 'learning_rate': 9.444444444444444e-05, 'epoch': 0.71}
+{'loss': 0.9762, 'learning_rate': 0.0001, 'epoch': 0.75}
+{'loss': 0.943, 'learning_rate': 0.00010555555555555557, 'epoch': 0.79}
+{'loss': 0.8768, 'learning_rate': 0.00011111111111111112, 'epoch': 0.83}
+{'loss': 0.964, 'learning_rate': 0.00011666666666666668, 'epoch': 0.88}
+{'loss': 0.894, 'learning_rate': 0.00012222222222222224, 'epoch': 0.92}
+{'loss': 0.886, 'learning_rate': 0.00012777777777777776, 'epoch': 0.96}
+[2025-04-25 06:56:50,915] [WARNING] [stage3.py:2139:step] 1 pytorch allocator cache flushes since last step. this happens when there is high memory pressure and is detrimental to performance. if this is happening frequently consider adjusting settings to reduce memory consumption. If you are unable to make the cache flushes go away consider adding get_accelerator().empty_cache() calls in your training loop to ensure that all ranks flush their caches at the same time
+{'loss': 0.9276, 'learning_rate': 0.00013333333333333334, 'epoch': 1.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.8287, 'learning_rate': 0.0001388888888888889, 'epoch': 1.04}
+{'loss': 0.8961, 'learning_rate': 0.00014444444444444444, 'epoch': 1.08}
+{'loss': 0.8398, 'learning_rate': 0.00015000000000000001, 'epoch': 1.12}
+{'loss': 0.8001, 'learning_rate': 0.00015555555555555556, 'epoch': 1.17}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.797, 'learning_rate': 0.0001611111111111111, 'epoch': 1.21}
+{'loss': 0.7908, 'learning_rate': 0.0001666666666666667, 'epoch': 1.25}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.7683, 'learning_rate': 0.00017222222222222224, 'epoch': 1.29}
+{'loss': 0.8438, 'learning_rate': 0.00017777777777777779, 'epoch': 1.33}
+{'loss': 0.8, 'learning_rate': 0.00018333333333333334, 'epoch': 1.38}
+{'loss': 0.7909, 'learning_rate': 0.00018888888888888888, 'epoch': 1.42}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.8059, 'learning_rate': 0.00019444444444444446, 'epoch': 1.46}
+{'loss': 0.8109, 'learning_rate': 0.0002, 'epoch': 1.5}
+{'loss': 0.7906, 'learning_rate': 0.0001999996357802219, 'epoch': 1.54}
+{'loss': 0.8079, 'learning_rate': 0.00019999854312354064, 'epoch': 1.58}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.7833, 'learning_rate': 0.00019999672203791565, 'epoch': 1.62}
+{'loss': 0.7886, 'learning_rate': 0.00019999417253661235, 'epoch': 1.67}
+{'loss': 0.7381, 'learning_rate': 0.0001999908946382024, 'epoch': 1.71}
+{'loss': 0.8089, 'learning_rate': 0.00019998688836656323, 'epoch': 1.75}
+{'loss': 0.7179, 'learning_rate': 0.00019998215375087816, 'epoch': 1.79}
+{'loss': 0.7605, 'learning_rate': 0.00019997669082563597, 'epoch': 1.83}
+{'loss': 0.8303, 'learning_rate': 0.0001999704996306308, 'epoch': 1.88}
+{'loss': 0.7614, 'learning_rate': 0.00019996358021096176, 'epoch': 1.92}
+{'loss': 0.7898, 'learning_rate': 0.00019995593261703262, 'epoch': 1.96}
+{'loss': 0.7508, 'learning_rate': 0.00019994755690455152, 'epoch': 2.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.6958, 'learning_rate': 0.0001999384531345304, 'epoch': 2.04}
+{'loss': 0.6716, 'learning_rate': 0.00019992862137328474, 'epoch': 2.08}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.6478, 'learning_rate': 0.000199918061692433, 'epoch': 2.12}
+{'loss': 0.6482, 'learning_rate': 0.00019990677416889608, 'epoch': 2.17}
+{'loss': 0.6267, 'learning_rate': 0.00019989475888489676, 'epoch': 2.21}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.6999, 'learning_rate': 0.0001998820159279591, 'epoch': 2.25}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.6865, 'learning_rate': 0.00019986854539090783, 'epoch': 2.29}
+{'loss': 0.6526, 'learning_rate': 0.0001998543473718677, 'epoch': 2.33}
+{'loss': 0.6604, 'learning_rate': 0.0001998394219742627, 'epoch': 2.38}
+{'loss': 0.6173, 'learning_rate': 0.00019982376930681531, 'epoch': 2.42}
+{'loss': 0.6412, 'learning_rate': 0.00019980738948354576, 'epoch': 2.46}
+{'loss': 0.6567, 'learning_rate': 0.00019979028262377118, 'epoch': 2.5}
+{'loss': 0.6265, 'learning_rate': 0.00019977244885210468, 'epoch': 2.54}
+{'loss': 0.6333, 'learning_rate': 0.00019975388829845448, 'epoch': 2.58}
+{'loss': 0.6868, 'learning_rate': 0.00019973460109802305, 'epoch': 2.62}
+{'loss': 0.6833, 'learning_rate': 0.00019971458739130598, 'epoch': 2.67}
+{'loss': 0.657, 'learning_rate': 0.00019969384732409096, 'epoch': 2.71}
+{'loss': 0.6495, 'learning_rate': 0.00019967238104745696, 'epoch': 2.75}
+{'loss': 0.664, 'learning_rate': 0.00019965018871777272, 'epoch': 2.79}
+{'loss': 0.6839, 'learning_rate': 0.000199627270496696, 'epoch': 2.83}
+{'loss': 0.677, 'learning_rate': 0.00019960362655117218, 'epoch': 2.88}
+{'loss': 0.6786, 'learning_rate': 0.0001995792570534331, 'epoch': 2.92}
+{'loss': 0.6883, 'learning_rate': 0.00019955416218099588, 'epoch': 2.96}
+{'loss': 0.6153, 'learning_rate': 0.0001995283421166614, 'epoch': 3.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.5372, 'learning_rate': 0.0001995017970485133, 'epoch': 3.04}
+{'loss': 0.5401, 'learning_rate': 0.00019947452716991633, 'epoch': 3.08}
+{'loss': 0.5224, 'learning_rate': 0.00019944653267951504, 'epoch': 3.12}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.5293, 'learning_rate': 0.00019941781378123244, 'epoch': 3.17}
+{'loss': 0.5109, 'learning_rate': 0.0001993883706842683, 'epoch': 3.21}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.4911, 'learning_rate': 0.00019935820360309777, 'epoch': 3.25}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.4834, 'learning_rate': 0.00019932731275746986, 'epoch': 3.29}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.5066, 'learning_rate': 0.00019929569837240564, 'epoch': 3.33}
+{'loss': 0.5174, 'learning_rate': 0.00019926336067819684, 'epoch': 3.38}
+{'loss': 0.5074, 'learning_rate': 0.00019923029991040402, 'epoch': 3.42}
+{'loss': 0.5015, 'learning_rate': 0.0001991965163098549, 'epoch': 3.46}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.5206, 'learning_rate': 0.00019916201012264254, 'epoch': 3.5}
+{'loss': 0.5073, 'learning_rate': 0.00019912678160012367, 'epoch': 3.54}
+{'loss': 0.5407, 'learning_rate': 0.0001990908309989168, 'epoch': 3.58}
+{'loss': 0.5231, 'learning_rate': 0.00019905415858090036, 'epoch': 3.62}
+{'loss': 0.5503, 'learning_rate': 0.00019901676461321068, 'epoch': 3.67}
+{'loss': 0.5129, 'learning_rate': 0.00019897864936824027, 'epoch': 3.71}
+{'loss': 0.5156, 'learning_rate': 0.00019893981312363562, 'epoch': 3.75}
+{'loss': 0.5467, 'learning_rate': 0.0001989002561622953, 'epoch': 3.79}
+{'loss': 0.5216, 'learning_rate': 0.00019885997877236788, 'epoch': 3.83}
+{'loss': 0.5125, 'learning_rate': 0.00019881898124724981, 'epoch': 3.88}
+{'loss': 0.545, 'learning_rate': 0.00019877726388558325, 'epoch': 3.92}
+{'loss': 0.5568, 'learning_rate': 0.00019873482699125393, 'epoch': 3.96}
+{'loss': 0.4646, 'learning_rate': 0.00019869167087338907, 'epoch': 4.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.3835, 'learning_rate': 0.00019864779584635484, 'epoch': 4.04}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.3583, 'learning_rate': 0.00019860320222975431, 'epoch': 4.08}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.3408, 'learning_rate': 0.00019855789034842504, 'epoch': 4.12}
+{'loss': 0.3712, 'learning_rate': 0.00019851186053243666, 'epoch': 4.17}
+{'loss': 0.3561, 'learning_rate': 0.00019846511311708858, 'epoch': 4.21}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.359, 'learning_rate': 0.00019841764844290744, 'epoch': 4.25}
+{'loss': 0.3659, 'learning_rate': 0.00019836946685564472, 'epoch': 4.29}
+{'loss': 0.3746, 'learning_rate': 0.00019832056870627417, 'epoch': 4.33}
+{'loss': 0.3536, 'learning_rate': 0.00019827095435098925, 'epoch': 4.38}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.3661, 'learning_rate': 0.00019822062415120054, 'epoch': 4.42}
+{'loss': 0.3621, 'learning_rate': 0.00019816957847353312, 'epoch': 4.46}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.3625, 'learning_rate': 0.0001981178176898239, 'epoch': 4.5}
+{'loss': 0.393, 'learning_rate': 0.00019806534217711895, 'epoch': 4.54}
+{'loss': 0.3634, 'learning_rate': 0.00019801215231767056, 'epoch': 4.58}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.3771, 'learning_rate': 0.0001979582484989348, 'epoch': 4.62}
+{'loss': 0.3761, 'learning_rate': 0.00019790363111356837, 'epoch': 4.67}
+{'loss': 0.3914, 'learning_rate': 0.0001978483005594259, 'epoch': 4.71}
+{'loss': 0.4048, 'learning_rate': 0.00019779225723955707, 'epoch': 4.75}
+{'loss': 0.409, 'learning_rate': 0.00019773550156220354, 'epoch': 4.79}
+{'loss': 0.3459, 'learning_rate': 0.00019767803394079615, 'epoch': 4.83}
+{'loss': 0.3682, 'learning_rate': 0.0001976198547939518, 'epoch': 4.88}
+{'loss': 0.3919, 'learning_rate': 0.0001975609645454704, 'epoch': 4.92}
+{'loss': 0.3607, 'learning_rate': 0.00019750136362433175, 'epoch': 4.96}
+{'loss': 0.3352, 'learning_rate': 0.00019744105246469263, 'epoch': 5.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.2462, 'learning_rate': 0.0001973800315058833, 'epoch': 5.04}
+{'loss': 0.2309, 'learning_rate': 0.00019731830119240463, 'epoch': 5.08}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.2576, 'learning_rate': 0.0001972558619739246, 'epoch': 5.12}
+{'loss': 0.2534, 'learning_rate': 0.0001971927143052752, 'epoch': 5.17}
+{'loss': 0.2498, 'learning_rate': 0.000197128858646449, 'epoch': 5.21}
+{'loss': 0.2597, 'learning_rate': 0.00019706429546259593, 'epoch': 5.25}
+{'loss': 0.255, 'learning_rate': 0.0001969990252240197, 'epoch': 5.29}
+{'loss': 0.2518, 'learning_rate': 0.00019693304840617457, 'epoch': 5.33}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.2688, 'learning_rate': 0.00019686636548966178, 'epoch': 5.38}
+{'loss': 0.2594, 'learning_rate': 0.00019679897696022608, 'epoch': 5.42}
+{'loss': 0.2509, 'learning_rate': 0.00019673088330875217, 'epoch': 5.46}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.244, 'learning_rate': 0.00019666208503126112, 'epoch': 5.5}
+{'loss': 0.2621, 'learning_rate': 0.00019659258262890683, 'epoch': 5.54}
+{'loss': 0.261, 'learning_rate': 0.0001965223766079723, 'epoch': 5.58}
+{'loss': 0.2792, 'learning_rate': 0.0001964514674798659, 'epoch': 5.62}
+{'loss': 0.2626, 'learning_rate': 0.00019637985576111778, 'epoch': 5.67}
+{'loss': 0.288, 'learning_rate': 0.00019630754197337612, 'epoch': 5.71}
+{'loss': 0.2565, 'learning_rate': 0.00019623452664340306, 'epoch': 5.75}
+{'loss': 0.2638, 'learning_rate': 0.0001961608103030711, 'epoch': 5.79}
+{'loss': 0.2716, 'learning_rate': 0.0001960863934893594, 'epoch': 5.83}
+{'loss': 0.2669, 'learning_rate': 0.00019601127674434928, 'epoch': 5.88}
+{'loss': 0.2779, 'learning_rate': 0.00019593546061522093, 'epoch': 5.92}
+{'loss': 0.28, 'learning_rate': 0.000195858945654249, 'epoch': 5.96}
+{'loss': 0.2314, 'learning_rate': 0.00019578173241879872, 'epoch': 6.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.1626, 'learning_rate': 0.00019570382147132188, 'epoch': 6.04}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.1613, 'learning_rate': 0.00019562521337935257, 'epoch': 6.08}
+{'loss': 0.1526, 'learning_rate': 0.0001955459087155033, 'epoch': 6.12}
+{'loss': 0.1567, 'learning_rate': 0.00019546590805746052, 'epoch': 6.17}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.144, 'learning_rate': 0.00019538521198798079, 'epoch': 6.21}
+{'loss': 0.1779, 'learning_rate': 0.0001953038210948861, 'epoch': 6.25}
+{'loss': 0.1718, 'learning_rate': 0.00019522173597105998, 'epoch': 6.29}
+{'loss': 0.1807, 'learning_rate': 0.00019513895721444286, 'epoch': 6.33}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.1893, 'learning_rate': 0.00019505548542802804, 'epoch': 6.38}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.1539, 'learning_rate': 0.00019497132121985695, 'epoch': 6.42}
+{'loss': 0.1691, 'learning_rate': 0.00019488646520301504, 'epoch': 6.46}
+{'loss': 0.1579, 'learning_rate': 0.00019480091799562704, 'epoch': 6.5}
+{'loss': 0.1696, 'learning_rate': 0.00019471468022085273, 'epoch': 6.54}
+{'loss': 0.172, 'learning_rate': 0.0001946277525068821, 'epoch': 6.58}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.203, 'learning_rate': 0.00019454013548693102, 'epoch': 6.62}
+{'loss': 0.1785, 'learning_rate': 0.00019445182979923654, 'epoch': 6.67}
+{'loss': 0.1664, 'learning_rate': 0.00019436283608705222, 'epoch': 6.71}
+{'loss': 0.1767, 'learning_rate': 0.00019427315499864344, 'epoch': 6.75}
+{'loss': 0.2074, 'learning_rate': 0.00019418278718728274, 'epoch': 6.79}
+{'loss': 0.1887, 'learning_rate': 0.000194091733311245, 'epoch': 6.83}
+{'loss': 0.1945, 'learning_rate': 0.00019399999403380266, 'epoch': 6.88}
+{'loss': 0.1853, 'learning_rate': 0.0001939075700232209, 'epoch': 6.92}
+{'loss': 0.1899, 'learning_rate': 0.0001938144619527528, 'epoch': 6.96}
+{'loss': 0.151, 'learning_rate': 0.00019372067050063438, 'epoch': 7.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.1025, 'learning_rate': 0.00019362619635007963, 'epoch': 7.04}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.1062, 'learning_rate': 0.00019353104018927567, 'epoch': 7.08}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.1078, 'learning_rate': 0.00019343520271137763, 'epoch': 7.12}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.1058, 'learning_rate': 0.0001933386846145036, 'epoch': 7.17}
+{'loss': 0.1178, 'learning_rate': 0.00019324148660172953, 'epoch': 7.21}
+{'loss': 0.1011, 'learning_rate': 0.00019314360938108425, 'epoch': 7.25}
+{'loss': 0.1096, 'learning_rate': 0.0001930450536655441, 'epoch': 7.29}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.1108, 'learning_rate': 0.00019294582017302797, 'epoch': 7.33}
+{'loss': 0.1176, 'learning_rate': 0.00019284590962639176, 'epoch': 7.38}
+{'loss': 0.0998, 'learning_rate': 0.00019274532275342354, 'epoch': 7.42}
+{'loss': 0.1134, 'learning_rate': 0.00019264406028683779, 'epoch': 7.46}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.115, 'learning_rate': 0.00019254212296427044, 'epoch': 7.5}
+{'loss': 0.1092, 'learning_rate': 0.0001924395115282732, 'epoch': 7.54}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.1249, 'learning_rate': 0.0001923362267263084, 'epoch': 7.58}
+{'loss': 0.1164, 'learning_rate': 0.0001922322693107434, 'epoch': 7.62}
+{'loss': 0.1095, 'learning_rate': 0.0001921276400388451, 'epoch': 7.67}
+{'loss': 0.1114, 'learning_rate': 0.00019202233967277455, 'epoch': 7.71}
+{'loss': 0.1136, 'learning_rate': 0.00019191636897958122, 'epoch': 7.75}
+{'loss': 0.1194, 'learning_rate': 0.0001918097287311976, 'epoch': 7.79}
+{'loss': 0.1154, 'learning_rate': 0.00019170241970443343, 'epoch': 7.83}
+{'loss': 0.126, 'learning_rate': 0.00019159444268097012, 'epoch': 7.88}
+{'loss': 0.1218, 'learning_rate': 0.00019148579844735497, 'epoch': 7.92}
+{'loss': 0.1297, 'learning_rate': 0.0001913764877949956, 'epoch': 7.96}
+{'loss': 0.0867, 'learning_rate': 0.00019126651152015403, 'epoch': 8.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0633, 'learning_rate': 0.00019115587042394094, 'epoch': 8.04}
+{'loss': 0.0714, 'learning_rate': 0.00019104456531230984, 'epoch': 8.08}
+{'loss': 0.0633, 'learning_rate': 0.00019093259699605125, 'epoch': 8.12}
+{'loss': 0.0841, 'learning_rate': 0.00019081996629078657, 'epoch': 8.17}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0628, 'learning_rate': 0.00019070667401696248, 'epoch': 8.21}
+{'loss': 0.0752, 'learning_rate': 0.0001905927209998447, 'epoch': 8.25}
+{'loss': 0.0689, 'learning_rate': 0.00019047810806951208, 'epoch': 8.29}
+{'loss': 0.0702, 'learning_rate': 0.00019036283606085053, 'epoch': 8.33}
+{'loss': 0.0767, 'learning_rate': 0.000190246905813547, 'epoch': 8.38}
+{'loss': 0.075, 'learning_rate': 0.00019013031817208324, 'epoch': 8.42}
+{'loss': 0.0682, 'learning_rate': 0.00019001307398572973, 'epoch': 8.46}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0641, 'learning_rate': 0.00018989517410853955, 'epoch': 8.5}
+{'loss': 0.0752, 'learning_rate': 0.000189776619399342, 'epoch': 8.54}
+{'loss': 0.0659, 'learning_rate': 0.00018965741072173646, 'epoch': 8.58}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0675, 'learning_rate': 0.00018953754894408616, 'epoch': 8.62}
+{'loss': 0.0886, 'learning_rate': 0.00018941703493951164, 'epoch': 8.67}
+{'loss': 0.0744, 'learning_rate': 0.00018929586958588463, 'epoch': 8.71}
+{'loss': 0.0837, 'learning_rate': 0.00018917405376582145, 'epoch': 8.75}
+{'loss': 0.0742, 'learning_rate': 0.00018905158836667675, 'epoch': 8.79}
+{'loss': 0.082, 'learning_rate': 0.00018892847428053693, 'epoch': 8.83}
+{'loss': 0.0857, 'learning_rate': 0.00018880471240421365, 'epoch': 8.88}
+{'loss': 0.0753, 'learning_rate': 0.00018868030363923747, 'epoch': 8.92}
+{'loss': 0.0711, 'learning_rate': 0.00018855524889185095, 'epoch': 8.96}
+{'loss': 0.0527, 'learning_rate': 0.00018842954907300236, 'epoch': 9.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0435, 'learning_rate': 0.00018830320509833896, 'epoch': 9.04}
+{'loss': 0.0463, 'learning_rate': 0.00018817621788820018, 'epoch': 9.08}
+{'loss': 0.0513, 'learning_rate': 0.00018804858836761107, 'epoch': 9.12}
+{'loss': 0.0598, 'learning_rate': 0.00018792031746627563, 'epoch': 9.17}
+{'loss': 0.0465, 'learning_rate': 0.00018779140611856977, 'epoch': 9.21}
+{'loss': 0.0452, 'learning_rate': 0.0001876618552635348, 'epoch': 9.25}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0441, 'learning_rate': 0.0001875316658448703, 'epoch': 9.29}
+{'loss': 0.0463, 'learning_rate': 0.0001874008388109276, 'epoch': 9.33}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.047, 'learning_rate': 0.00018726937511470246, 'epoch': 9.38}
+{'loss': 0.0387, 'learning_rate': 0.00018713727571382857, 'epoch': 9.42}
+{'loss': 0.038, 'learning_rate': 0.0001870045415705701, 'epoch': 9.46}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0478, 'learning_rate': 0.00018687117365181512, 'epoch': 9.5}
+{'loss': 0.054, 'learning_rate': 0.0001867371729290683, 'epoch': 9.54}
+{'loss': 0.0487, 'learning_rate': 0.00018660254037844388, 'epoch': 9.58}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0489, 'learning_rate': 0.00018646727698065865, 'epoch': 9.62}
+{'loss': 0.0481, 'learning_rate': 0.00018633138372102468, 'epoch': 9.67}
+{'loss': 0.0469, 'learning_rate': 0.00018619486158944222, 'epoch': 9.71}
+{'loss': 0.047, 'learning_rate': 0.00018605771158039253, 'epoch': 9.75}
+{'loss': 0.0619, 'learning_rate': 0.00018591993469293047, 'epoch': 9.79}
+{'loss': 0.04, 'learning_rate': 0.00018578153193067745, 'epoch': 9.83}
+{'loss': 0.0493, 'learning_rate': 0.00018564250430181387, 'epoch': 9.88}
+{'loss': 0.0369, 'learning_rate': 0.000185502852819072, 'epoch': 9.92}
+{'loss': 0.0428, 'learning_rate': 0.00018536257849972846, 'epoch': 9.96}
+{'loss': 0.0342, 'learning_rate': 0.00018522168236559695, 'epoch': 10.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0279, 'learning_rate': 0.00018508016544302057, 'epoch': 10.04}
+{'loss': 0.0218, 'learning_rate': 0.0001849380287628646, 'epoch': 10.08}
+{'loss': 0.0283, 'learning_rate': 0.00018479527336050878, 'epoch': 10.12}
+{'loss': 0.0274, 'learning_rate': 0.00018465190027584005, 'epoch': 10.17}
+{'loss': 0.0248, 'learning_rate': 0.00018450791055324458, 'epoch': 10.21}
+{'loss': 0.0218, 'learning_rate': 0.00018436330524160047, 'epoch': 10.25}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0342, 'learning_rate': 0.00018421808539427004, 'epoch': 10.29}
+{'loss': 0.0387, 'learning_rate': 0.00018407225206909208, 'epoch': 10.33}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0369, 'learning_rate': 0.00018392580632837423, 'epoch': 10.38}
+{'loss': 0.0378, 'learning_rate': 0.0001837787492388852, 'epoch': 10.42}
+{'loss': 0.0381, 'learning_rate': 0.00018363108187184702, 'epoch': 10.46}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0379, 'learning_rate': 0.00018348280530292713, 'epoch': 10.5}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.043, 'learning_rate': 0.00018333392061223078, 'epoch': 10.54}
+{'loss': 0.0354, 'learning_rate': 0.0001831844288842929, 'epoch': 10.58}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0413, 'learning_rate': 0.0001830343312080704, 'epoch': 10.62}
+{'loss': 0.0407, 'learning_rate': 0.00018288362867693414, 'epoch': 10.67}
+{'loss': 0.0365, 'learning_rate': 0.00018273232238866094, 'epoch': 10.71}
+{'loss': 0.0331, 'learning_rate': 0.00018258041344542566, 'epoch': 10.75}
+{'loss': 0.028, 'learning_rate': 0.00018242790295379315, 'epoch': 10.79}
+{'loss': 0.043, 'learning_rate': 0.00018227479202471015, 'epoch': 10.83}
+{'loss': 0.029, 'learning_rate': 0.0001821210817734972, 'epoch': 10.88}
+{'loss': 0.0382, 'learning_rate': 0.0001819667733198406, 'epoch': 10.92}
+{'loss': 0.0286, 'learning_rate': 0.0001818118677877842, 'epoch': 10.96}
+{'loss': 0.0369, 'learning_rate': 0.0001816563663057211, 'epoch': 11.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0197, 'learning_rate': 0.00018150027000638565, 'epoch': 11.04}
+{'loss': 0.0262, 'learning_rate': 0.00018134358002684504, 'epoch': 11.08}
+{'loss': 0.0192, 'learning_rate': 0.00018118629750849105, 'epoch': 11.12}
+{'loss': 0.0207, 'learning_rate': 0.00018102842359703176, 'epoch': 11.17}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0186, 'learning_rate': 0.0001808699594424832, 'epoch': 11.21}
+{'loss': 0.0194, 'learning_rate': 0.00018071090619916093, 'epoch': 11.25}
+{'loss': 0.0213, 'learning_rate': 0.00018055126502567172, 'epoch': 11.29}
+{'loss': 0.0169, 'learning_rate': 0.000180391037084905, 'epoch': 11.33}
+{'loss': 0.0179, 'learning_rate': 0.0001802302235440245, 'epoch': 11.38}
+{'loss': 0.0338, 'learning_rate': 0.00018006882557445962, 'epoch': 11.42}
+{'loss': 0.0174, 'learning_rate': 0.00017990684435189707, 'epoch': 11.46}
+{'loss': 0.0246, 'learning_rate': 0.00017974428105627208, 'epoch': 11.5}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0239, 'learning_rate': 0.00017958113687176005, 'epoch': 11.54}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0238, 'learning_rate': 0.00017941741298676774, 'epoch': 11.58}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0202, 'learning_rate': 0.0001792531105939247, 'epoch': 11.62}
+{'loss': 0.0242, 'learning_rate': 0.00017908823089007457, 'epoch': 11.67}
+{'loss': 0.0274, 'learning_rate': 0.00017892277507626628, 'epoch': 11.71}
+{'loss': 0.0245, 'learning_rate': 0.00017875674435774547, 'epoch': 11.75}
+{'loss': 0.0272, 'learning_rate': 0.00017859013994394552, 'epoch': 11.79}
+{'loss': 0.0322, 'learning_rate': 0.00017842296304847893, 'epoch': 11.83}
+{'loss': 0.0217, 'learning_rate': 0.0001782552148891283, 'epoch': 11.88}
+{'loss': 0.0209, 'learning_rate': 0.00017808689668783763, 'epoch': 11.92}
+{'loss': 0.02, 'learning_rate': 0.00017791800967070323, 'epoch': 11.96}
+{'loss': 0.0213, 'learning_rate': 0.00017774855506796496, 'epoch': 12.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0188, 'learning_rate': 0.00017757853411399713, 'epoch': 12.04}
+{'loss': 0.0132, 'learning_rate': 0.00017740794804729969, 'epoch': 12.08}
+{'loss': 0.019, 'learning_rate': 0.00017723679811048904, 'epoch': 12.12}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0147, 'learning_rate': 0.00017706508555028893, 'epoch': 12.17}
+{'loss': 0.0164, 'learning_rate': 0.00017689281161752164, 'epoch': 12.21}
+{'loss': 0.0162, 'learning_rate': 0.00017671997756709863, 'epoch': 12.25}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0167, 'learning_rate': 0.00017654658465801146, 'epoch': 12.29}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0123, 'learning_rate': 0.0001763726341533227, 'epoch': 12.33}
+{'loss': 0.0157, 'learning_rate': 0.00017619812732015664, 'epoch': 12.38}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0135, 'learning_rate': 0.00017602306542969005, 'epoch': 12.42}
+{'loss': 0.0183, 'learning_rate': 0.000175847449757143, 'epoch': 12.46}
+{'loss': 0.0168, 'learning_rate': 0.00017567128158176953, 'epoch': 12.5}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0135, 'learning_rate': 0.00017549456218684831, 'epoch': 12.54}
+{'loss': 0.0232, 'learning_rate': 0.0001753172928596733, 'epoch': 12.58}
+{'loss': 0.0209, 'learning_rate': 0.00017513947489154443, 'epoch': 12.62}
+{'loss': 0.0237, 'learning_rate': 0.0001749611095777581, 'epoch': 12.67}
+{'loss': 0.0169, 'learning_rate': 0.00017478219821759775, 'epoch': 12.71}
+{'loss': 0.0275, 'learning_rate': 0.0001746027421143246, 'epoch': 12.75}
+{'loss': 0.0188, 'learning_rate': 0.00017442274257516784, 'epoch': 12.79}
+{'loss': 0.0233, 'learning_rate': 0.00017424220091131535, 'epoch': 12.83}
+{'loss': 0.0212, 'learning_rate': 0.000174061118437904, 'epoch': 12.88}
+{'loss': 0.0205, 'learning_rate': 0.00017387949647401012, 'epoch': 12.92}
+{'loss': 0.024, 'learning_rate': 0.00017369733634264, 'epoch': 12.96}
+{'loss': 0.0187, 'learning_rate': 0.00017351463937072004, 'epoch': 13.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0091, 'learning_rate': 0.00017333140688908732, 'epoch': 13.04}
+{'loss': 0.0116, 'learning_rate': 0.00017314764023247962, 'epoch': 13.08}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0161, 'learning_rate': 0.00017296334073952605, 'epoch': 13.12}
+{'loss': 0.0193, 'learning_rate': 0.00017277850975273696, 'epoch': 13.17}
+{'loss': 0.0094, 'learning_rate': 0.00017259314861849438, 'epoch': 13.21}
+{'loss': 0.0185, 'learning_rate': 0.00017240725868704218, 'epoch': 13.25}
+{'loss': 0.0113, 'learning_rate': 0.0001722208413124761, 'epoch': 13.29}
+{'loss': 0.0164, 'learning_rate': 0.000172033897852734, 'epoch': 13.33}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0128, 'learning_rate': 0.0001718464296695861, 'epoch': 13.38}
+{'loss': 0.011, 'learning_rate': 0.00017165843812862473, 'epoch': 13.42}
+{'loss': 0.0141, 'learning_rate': 0.00017146992459925463, 'epoch': 13.46}
+{'loss': 0.0162, 'learning_rate': 0.00017128089045468294, 'epoch': 13.5}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0116, 'learning_rate': 0.00017109133707190913, 'epoch': 13.54}
+{'loss': 0.0212, 'learning_rate': 0.00017090126583171503, 'epoch': 13.58}
+{'loss': 0.022, 'learning_rate': 0.00017071067811865476, 'epoch': 13.62}
+{'loss': 0.0114, 'learning_rate': 0.0001705195753210446, 'epoch': 13.67}
+{'loss': 0.0155, 'learning_rate': 0.00017032795883095285, 'epoch': 13.71}
+{'loss': 0.0126, 'learning_rate': 0.00017013583004418993, 'epoch': 13.75}
+{'loss': 0.0142, 'learning_rate': 0.00016994319036029785, 'epoch': 13.79}
+{'loss': 0.0227, 'learning_rate': 0.0001697500411825403, 'epoch': 13.83}
+{'loss': 0.0159, 'learning_rate': 0.00016955638391789228, 'epoch': 13.88}
+{'loss': 0.0255, 'learning_rate': 0.00016936221997702991, 'epoch': 13.92}
+{'loss': 0.0153, 'learning_rate': 0.00016916755077432013, 'epoch': 13.96}
+{'loss': 0.0069, 'learning_rate': 0.00016897237772781044, 'epoch': 14.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0097, 'learning_rate': 0.00016877670225921845, 'epoch': 14.04}
+{'loss': 0.007, 'learning_rate': 0.00016858052579392182, 'epoch': 14.08}
+{'loss': 0.0131, 'learning_rate': 0.00016838384976094738, 'epoch': 14.12}
+{'loss': 0.0098, 'learning_rate': 0.0001681866755929612, 'epoch': 14.17}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.009, 'learning_rate': 0.0001679890047262579, 'epoch': 14.21}
+{'loss': 0.0066, 'learning_rate': 0.00016779083860075033, 'epoch': 14.25}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0231, 'learning_rate': 0.00016759217865995883, 'epoch': 14.29}
+{'loss': 0.0143, 'learning_rate': 0.00016739302635100108, 'epoch': 14.33}
+{'loss': 0.0141, 'learning_rate': 0.00016719338312458124, 'epoch': 14.38}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0121, 'learning_rate': 0.00016699325043497955, 'epoch': 14.42}
+{'loss': 0.0178, 'learning_rate': 0.0001667926297400417, 'epoch': 14.46}
+{'loss': 0.0179, 'learning_rate': 0.00016659152250116812, 'epoch': 14.5}
+{'loss': 0.0162, 'learning_rate': 0.0001663899301833036, 'epoch': 14.54}
+{'loss': 0.009, 'learning_rate': 0.00016618785425492617, 'epoch': 14.58}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0165, 'learning_rate': 0.000165985296188037, 'epoch': 14.62}
+{'loss': 0.0049, 'learning_rate': 0.00016578225745814907, 'epoch': 14.67}
+{'loss': 0.0192, 'learning_rate': 0.00016557873954427683, 'epoch': 14.71}
+{'loss': 0.0149, 'learning_rate': 0.00016537474392892528, 'epoch': 14.75}
+{'loss': 0.0144, 'learning_rate': 0.00016517027209807911, 'epoch': 14.79}
+{'loss': 0.0113, 'learning_rate': 0.00016496532554119214, 'epoch': 14.83}
+{'loss': 0.0117, 'learning_rate': 0.00016475990575117605, 'epoch': 14.88}
+{'loss': 0.0208, 'learning_rate': 0.00016455401422438986, 'epoch': 14.92}
+{'loss': 0.0213, 'learning_rate': 0.00016434765246062892, 'epoch': 14.96}
+{'loss': 0.0092, 'learning_rate': 0.000164140821963114, 'epoch': 15.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0091, 'learning_rate': 0.00016393352423848016, 'epoch': 15.04}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0092, 'learning_rate': 0.0001637257607967661, 'epoch': 15.08}
+{'loss': 0.0063, 'learning_rate': 0.00016351753315140287, 'epoch': 15.12}
+{'loss': 0.0093, 'learning_rate': 0.000163308842819203, 'epoch': 15.17}
+{'loss': 0.0129, 'learning_rate': 0.00016309969132034945, 'epoch': 15.21}
+{'loss': 0.0054, 'learning_rate': 0.00016289008017838445, 'epoch': 15.25}
+{'loss': 0.0108, 'learning_rate': 0.0001626800109201985, 'epoch': 15.29}
+{'loss': 0.0139, 'learning_rate': 0.00016246948507601914, 'epoch': 15.33}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0107, 'learning_rate': 0.0001622585041793999, 'epoch': 15.38}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0085, 'learning_rate': 0.0001620470697672091, 'epoch': 15.42}
+{'loss': 0.0073, 'learning_rate': 0.00016183518337961863, 'epoch': 15.46}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0101, 'learning_rate': 0.00016162284656009274, 'epoch': 15.5}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0152, 'learning_rate': 0.00016141006085537682, 'epoch': 15.54}
+{'loss': 0.0081, 'learning_rate': 0.00016119682781548614, 'epoch': 15.58}
+{'loss': 0.0086, 'learning_rate': 0.00016098314899369446, 'epoch': 15.62}
+{'loss': 0.0051, 'learning_rate': 0.0001607690259465229, 'epoch': 15.67}
+{'loss': 0.0084, 'learning_rate': 0.0001605544602337284, 'epoch': 15.71}
+{'loss': 0.0167, 'learning_rate': 0.00016033945341829248, 'epoch': 15.75}
+{'loss': 0.0157, 'learning_rate': 0.00016012400706640984, 'epoch': 15.79}
+{'loss': 0.0124, 'learning_rate': 0.00015990812274747692, 'epoch': 15.83}
+{'loss': 0.0087, 'learning_rate': 0.0001596918020340805, 'epoch': 15.88}
+{'loss': 0.0119, 'learning_rate': 0.00015947504650198628, 'epoch': 15.92}
+{'loss': 0.0113, 'learning_rate': 0.00015925785773012724, 'epoch': 15.96}
+{'loss': 0.0115, 'learning_rate': 0.00015904023730059228, 'epoch': 16.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0076, 'learning_rate': 0.00015882218679861475, 'epoch': 16.04}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0064, 'learning_rate': 0.0001586037078125607, 'epoch': 16.08}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0137, 'learning_rate': 0.00015838480193391754, 'epoch': 16.12}
+{'loss': 0.0074, 'learning_rate': 0.00015816547075728226, 'epoch': 16.17}
+{'loss': 0.0202, 'learning_rate': 0.00015794571588034992, 'epoch': 16.21}
+{'loss': 0.0085, 'learning_rate': 0.00015772553890390197, 'epoch': 16.25}
+{'loss': 0.0067, 'learning_rate': 0.00015750494143179454, 'epoch': 16.29}
+{'loss': 0.0076, 'learning_rate': 0.000157283925070947, 'epoch': 16.33}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0085, 'learning_rate': 0.00015706249143132982, 'epoch': 16.38}
+{'loss': 0.0083, 'learning_rate': 0.00015684064212595332, 'epoch': 16.42}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0081, 'learning_rate': 0.0001566183787708555, 'epoch': 16.46}
+{'loss': 0.0104, 'learning_rate': 0.00015639570298509064, 'epoch': 16.5}
+{'loss': 0.0099, 'learning_rate': 0.00015617261639071724, 'epoch': 16.54}
+{'loss': 0.0148, 'learning_rate': 0.00015594912061278626, 'epoch': 16.58}
+{'loss': 0.0138, 'learning_rate': 0.00015572521727932935, 'epoch': 16.62}
+{'loss': 0.0081, 'learning_rate': 0.000155500908021347, 'epoch': 16.67}
+{'loss': 0.0103, 'learning_rate': 0.00015527619447279654, 'epoch': 16.71}
+{'loss': 0.0133, 'learning_rate': 0.00015505107827058036, 'epoch': 16.75}
+{'loss': 0.015, 'learning_rate': 0.00015482556105453392, 'epoch': 16.79}
+{'loss': 0.0123, 'learning_rate': 0.00015459964446741382, 'epoch': 16.83}
+{'loss': 0.0095, 'learning_rate': 0.00015437333015488587, 'epoch': 16.88}
+{'loss': 0.0107, 'learning_rate': 0.00015414661976551302, 'epoch': 16.92}
+{'loss': 0.0081, 'learning_rate': 0.00015391951495074342, 'epoch': 16.96}
+{'loss': 0.0103, 'learning_rate': 0.0001536920173648984, 'epoch': 17.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.003, 'learning_rate': 0.0001534641286651603, 'epoch': 17.04}
+{'loss': 0.0091, 'learning_rate': 0.0001532358505115607, 'epoch': 17.08}
+{'loss': 0.0061, 'learning_rate': 0.00015300718456696778, 'epoch': 17.12}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0057, 'learning_rate': 0.00015277813249707487, 'epoch': 17.17}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0062, 'learning_rate': 0.0001525486959703878, 'epoch': 17.21}
+{'loss': 0.0119, 'learning_rate': 0.000152318876658213, 'epoch': 17.25}
+{'loss': 0.0034, 'learning_rate': 0.00015208867623464528, 'epoch': 17.29}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0094, 'learning_rate': 0.0001518580963765555, 'epoch': 17.33}
+{'loss': 0.0073, 'learning_rate': 0.00015162713876357858, 'epoch': 17.38}
+{'loss': 0.0052, 'learning_rate': 0.00015139580507810119, 'epoch': 17.42}
+{'loss': 0.0065, 'learning_rate': 0.00015116409700524934, 'epoch': 17.46}
+{'loss': 0.0066, 'learning_rate': 0.00015093201623287631, 'epoch': 17.5}
+{'loss': 0.009, 'learning_rate': 0.00015069956445155027, 'epoch': 17.54}
+{'loss': 0.0042, 'learning_rate': 0.0001504667433545419, 'epoch': 17.58}
+{'loss': 0.0047, 'learning_rate': 0.0001502335546378122, 'epoch': 17.62}
+{'loss': 0.0075, 'learning_rate': 0.00015000000000000001, 'epoch': 17.67}
+{'loss': 0.0114, 'learning_rate': 0.0001497660811424097, 'epoch': 17.71}
+{'loss': 0.0117, 'learning_rate': 0.00014953179976899878, 'epoch': 17.75}
+{'loss': 0.0061, 'learning_rate': 0.0001492971575863654, 'epoch': 17.79}
+{'loss': 0.0047, 'learning_rate': 0.00014906215630373606, 'epoch': 17.83}
+{'loss': 0.0046, 'learning_rate': 0.00014882679763295306, 'epoch': 17.88}
+{'loss': 0.0076, 'learning_rate': 0.00014859108328846204, 'epoch': 17.92}
+{'loss': 0.0175, 'learning_rate': 0.00014835501498729957, 'epoch': 17.96}
+{'loss': 0.0029, 'learning_rate': 0.00014811859444908052, 'epoch': 18.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0021, 'learning_rate': 0.00014788182339598558, 'epoch': 18.04}
+{'loss': 0.003, 'learning_rate': 0.00014764470355274875, 'epoch': 18.08}
+{'loss': 0.0071, 'learning_rate': 0.00014740723664664483, 'epoch': 18.12}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0077, 'learning_rate': 0.00014716942440747664, 'epoch': 18.17}
+{'loss': 0.0054, 'learning_rate': 0.00014693126856756258, 'epoch': 18.21}
+{'loss': 0.0034, 'learning_rate': 0.00014669277086172406, 'epoch': 18.25}
+{'loss': 0.0034, 'learning_rate': 0.00014645393302727269, 'epoch': 18.29}
+{'loss': 0.0044, 'learning_rate': 0.0001462147568039977, 'epoch': 18.33}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0133, 'learning_rate': 0.00014597524393415335, 'epoch': 18.38}
+{'loss': 0.0033, 'learning_rate': 0.00014573539616244608, 'epoch': 18.42}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0031, 'learning_rate': 0.00014549521523602197, 'epoch': 18.46}
+{'loss': 0.0042, 'learning_rate': 0.00014525470290445392, 'epoch': 18.5}
+{'loss': 0.0034, 'learning_rate': 0.0001450138609197288, 'epoch': 18.54}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0042, 'learning_rate': 0.00014477269103623498, 'epoch': 18.58}
+{'loss': 0.0023, 'learning_rate': 0.00014453119501074924, 'epoch': 18.62}
+{'loss': 0.0059, 'learning_rate': 0.00014428937460242417, 'epoch': 18.67}
+{'loss': 0.0075, 'learning_rate': 0.00014404723157277532, 'epoch': 18.71}
+{'loss': 0.0059, 'learning_rate': 0.00014380476768566824, 'epoch': 18.75}
+{'loss': 0.003, 'learning_rate': 0.00014356198470730585, 'epoch': 18.79}
+{'loss': 0.004, 'learning_rate': 0.00014331888440621533, 'epoch': 18.83}
+{'loss': 0.0105, 'learning_rate': 0.00014307546855323549, 'epoch': 18.88}
+{'loss': 0.0062, 'learning_rate': 0.00014283173892150366, 'epoch': 18.92}
+{'loss': 0.0072, 'learning_rate': 0.0001425876972864429, 'epoch': 18.96}
+{'loss': 0.0033, 'learning_rate': 0.00014234334542574906, 'epoch': 19.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0051, 'learning_rate': 0.00014209868511937766, 'epoch': 19.04}
+{'loss': 0.0031, 'learning_rate': 0.00014185371814953116, 'epoch': 19.08}
+{'loss': 0.005, 'learning_rate': 0.00014160844630064595, 'epoch': 19.12}
+{'loss': 0.0074, 'learning_rate': 0.00014136287135937915, 'epoch': 19.17}
+{'loss': 0.0076, 'learning_rate': 0.00014111699511459578, 'epoch': 19.21}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0044, 'learning_rate': 0.00014087081935735564, 'epoch': 19.25}
+{'loss': 0.0035, 'learning_rate': 0.0001406243458809003, 'epoch': 19.29}
+{'loss': 0.0034, 'learning_rate': 0.00014037757648064018, 'epoch': 19.33}
+{'loss': 0.0066, 'learning_rate': 0.00014013051295414108, 'epoch': 19.38}
+{'loss': 0.0017, 'learning_rate': 0.00013988315710111151, 'epoch': 19.42}
+{'loss': 0.004, 'learning_rate': 0.00013963551072338932, 'epoch': 19.46}
+{'loss': 0.0084, 'learning_rate': 0.00013938757562492873, 'epoch': 19.5}
+{'loss': 0.0069, 'learning_rate': 0.00013913935361178705, 'epoch': 19.54}
+{'loss': 0.0022, 'learning_rate': 0.00013889084649211156, 'epoch': 19.58}
+{'loss': 0.0043, 'learning_rate': 0.00013864205607612648, 'epoch': 19.62}
+{'loss': 0.0068, 'learning_rate': 0.00013839298417611963, 'epoch': 19.67}
+{'loss': 0.0054, 'learning_rate': 0.0001381436326064292, 'epoch': 19.71}
+{'loss': 0.0058, 'learning_rate': 0.00013789400318343068, 'epoch': 19.75}
+{'loss': 0.0047, 'learning_rate': 0.00013764409772552353, 'epoch': 19.79}
+{'loss': 0.0031, 'learning_rate': 0.00013739391805311793, 'epoch': 19.83}
+{'loss': 0.0037, 'learning_rate': 0.00013714346598862166, 'epoch': 19.88}
+{'loss': 0.0058, 'learning_rate': 0.00013689274335642652, 'epoch': 19.92}
+{'loss': 0.0079, 'learning_rate': 0.00013664175198289542, 'epoch': 19.96}
+{'loss': 0.0044, 'learning_rate': 0.00013639049369634876, 'epoch': 20.0}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0101, 'learning_rate': 0.00013613897032705132, 'epoch': 20.04}
+{'loss': 0.0035, 'learning_rate': 0.00013588718370719877, 'epoch': 20.08}
+{'loss': 0.0011, 'learning_rate': 0.0001356351356709045, 'epoch': 20.12}
+{'loss': 0.0015, 'learning_rate': 0.0001353828280541861, 'epoch': 20.17}
+{'loss': 0.0034, 'learning_rate': 0.000135130262694952, 'epoch': 20.21}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0054, 'learning_rate': 0.00013487744143298822, 'epoch': 20.25}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0017, 'learning_rate': 0.00013462436610994487, 'epoch': 20.29}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0041, 'learning_rate': 0.00013437103856932264, 'epoch': 20.33}
+{'loss': 0.0025, 'learning_rate': 0.0001341174606564596, 'epoch': 20.38}
+{'loss': 0.0068, 'learning_rate': 0.00013386363421851756, 'epoch': 20.42}
+{'loss': 0.0023, 'learning_rate': 0.0001336095611044687, 'epoch': 20.46}
+{'loss': 0.0025, 'learning_rate': 0.00013335524316508208, 'epoch': 20.5}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0024, 'learning_rate': 0.00013310068225291016, 'epoch': 20.54}
+WARNING: tokenization mismatch: 1 vs. 50. (ignored)
+{'loss': 0.0043, 'learning_rate': 0.00013284588022227528, 'epoch': 20.58}
+{'loss': 0.0023, 'learning_rate': 0.00013259083892925633, 'epoch': 20.62}
+{'loss': 0.0044, 'learning_rate': 0.00013233556023167485, 'epoch': 20.67}
+{'loss': 0.0026, 'learning_rate': 0.00013208004598908198, 'epoch': 20.71}
+{'loss': 0.0051, 'learning_rate': 0.0001318242980627444, 'epoch': 20.75}
+{'loss': 0.0025, 'learning_rate': 0.00013156831831563124, 'epoch': 20.79}
+{'loss': 0.0019, 'learning_rate': 0.00013131210861240026, 'epoch': 20.83}
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mkind-paper-45[0m at: [34mhttps://wandb.ai/jt828-cornell-university/huggingface/runs/dhu0evob[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250425_065114-dhu0evob/logs[0m
+[2025-04-25 08:45:28,995] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 7599
+[2025-04-25 08:45:29,397] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 7600
+[2025-04-25 08:45:29,420] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 7601
+[2025-04-25 08:45:29,435] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 7602
+[2025-04-25 08:45:29,435] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 7603
+[2025-04-25 08:45:29,451] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 7604
+[2025-04-25 08:45:29,466] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 7605
+[2025-04-25 08:45:29,481] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 7606
+[2025-04-25 08:45:29,496] [ERROR] [launch.py:325:sigkill_handler] ['/home/zl986/miniconda3/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=7', '--lora_enable', 'True', '--lora_r', '128', '--lora_alpha', '256', '--mm_projector_lr', '2e-5', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', 'liuhaotian/llava-v1.5-7b', '--version', 'v1', '--data_path', '/home/zl986/backdoor-test/data2.json', '--image_folder', '/home/zl986/backdoor-test/waymo-images', '--vision_tower', 'openai/clip-vit-large-patch14-336', '--mm_projector_type', 'mlp2x_gelu', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--group_by_modality_length', 'True', '--bf16', 'True', '--output_dir', '/home/zl986/backdoor-test/llava-driving-ft-5', '--num_train_epochs', '50', '--per_device_train_batch_size', '16', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '100', '--learning_rate', '2e-4', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '2048', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '4', '--lazy_preprocess', 'True', '--report_to', 'wandb'] exits with return code = 1
+
+Error Output:
+/home/zl986/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
+You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
+You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.68s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.73s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.27s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.70s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.86s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.82s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.80s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:18<00:18, 18.83s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 10.68s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 11.13s/it]
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.49s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.91s/it]
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 10.72s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 11.19s/it]
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 10.70s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 11.15s/it]
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 10.70s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 11.15s/it]
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 10.67s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 11.14s/it]
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 10.75s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 11.21s/it]
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00,  9.97s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 11.29s/it]
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: jt828 (jt828-cornell-university) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/zl986/backdoor-test/LLaVA/wandb/run-20250425_065114-dhu0evob
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run kind-paper-45
+wandb: ⭐️ View project at https://wandb.ai/jt828-cornell-university/huggingface
+wandb: 🚀 View run at https://wandb.ai/jt828-cornell-university/huggingface/runs/dhu0evob
+
+  0%|          | 0/1200 [00:00<?, ?it/s]/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+  0%|          | 1/1200 [00:29<9:39:36, 29.00s/it]
+                                                  
+
+  0%|          | 1/1200 [00:29<9:39:36, 29.00s/it]
+  0%|          | 2/1200 [00:42<6:39:47, 20.02s/it]
+                                                  
+
+  0%|          | 2/1200 [00:42<6:39:47, 20.02s/it]
+  0%|          | 3/1200 [00:56<5:38:45, 16.98s/it]
+                                                  
+
+  0%|          | 3/1200 [00:56<5:38:45, 16.98s/it]
+  0%|          | 4/1200 [01:09<5:09:30, 15.53s/it]
+                                                  
+
+  0%|          | 4/1200 [01:09<5:09:30, 15.53s/it]
+  0%|          | 5/1200 [01:22<4:55:18, 14.83s/it]
+                                                  
+
+  0%|          | 5/1200 [01:22<4:55:18, 14.83s/it]
+  0%|          | 6/1200 [01:36<4:44:04, 14.28s/it]
+                                                  
+
+  0%|          | 6/1200 [01:36<4:44:04, 14.28s/it]
+  1%|          | 7/1200 [01:49<4:37:48, 13.97s/it]
+                                                  
+
+  1%|          | 7/1200 [01:49<4:37:48, 13.97s/it]
+  1%|          | 8/1200 [02:02<4:33:18, 13.76s/it]
+                                                  
+
+  1%|          | 8/1200 [02:02<4:33:18, 13.76s/it]
+  1%|          | 9/1200 [02:16<4:31:03, 13.66s/it]
+                                                  
+
+  1%|          | 9/1200 [02:16<4:31:03, 13.66s/it]
+  1%|          | 10/1200 [02:29<4:28:35, 13.54s/it]
+                                                   
+
+  1%|          | 10/1200 [02:29<4:28:35, 13.54s/it]
+  1%|          | 11/1200 [02:42<4:27:15, 13.49s/it]
+                                                   
+
+  1%|          | 11/1200 [02:42<4:27:15, 13.49s/it]
+  1%|          | 12/1200 [02:56<4:25:34, 13.41s/it]
+                                                   
+
+  1%|          | 12/1200 [02:56<4:25:34, 13.41s/it]
+  1%|          | 13/1200 [03:09<4:24:44, 13.38s/it]
+                                                   
+
+  1%|          | 13/1200 [03:09<4:24:44, 13.38s/it]
+  1%|          | 14/1200 [03:22<4:25:14, 13.42s/it]
+                                                   
+
+  1%|          | 14/1200 [03:22<4:25:14, 13.42s/it]
+  1%|▏         | 15/1200 [03:36<4:24:19, 13.38s/it]
+                                                   
+
+  1%|▏         | 15/1200 [03:36<4:24:19, 13.38s/it]
+  1%|▏         | 16/1200 [03:49<4:23:06, 13.33s/it]
+                                                   
+
+  1%|▏         | 16/1200 [03:49<4:23:06, 13.33s/it]
+  1%|▏         | 17/1200 [04:02<4:22:08, 13.30s/it]
+                                                   
+
+  1%|▏         | 17/1200 [04:02<4:22:08, 13.30s/it]
+  2%|▏         | 18/1200 [04:15<4:21:09, 13.26s/it]
+                                                   
+
+  2%|▏         | 18/1200 [04:15<4:21:09, 13.26s/it]
+  2%|▏         | 19/1200 [04:29<4:20:37, 13.24s/it]
+                                                   
+
+  2%|▏         | 19/1200 [04:29<4:20:37, 13.24s/it]
+  2%|▏         | 20/1200 [04:42<4:20:36, 13.25s/it]
+                                                   
+
+  2%|▏         | 20/1200 [04:42<4:20:36, 13.25s/it]
+  2%|▏         | 21/1200 [04:55<4:20:13, 13.24s/it]
+                                                   
+
+  2%|▏         | 21/1200 [04:55<4:20:13, 13.24s/it]
+  2%|▏         | 22/1200 [05:08<4:20:17, 13.26s/it]
+                                                   
+
+  2%|▏         | 22/1200 [05:08<4:20:17, 13.26s/it]
+  2%|▏         | 23/1200 [05:22<4:19:41, 13.24s/it]
+                                                   
+
+  2%|▏         | 23/1200 [05:22<4:19:41, 13.24s/it]
+  2%|▏         | 24/1200 [05:35<4:22:27, 13.39s/it]
+                                                   
+
+  2%|▏         | 24/1200 [05:35<4:22:27, 13.39s/it]
+  2%|▏         | 25/1200 [05:52<4:43:59, 14.50s/it]
+                                                   
+
+  2%|▏         | 25/1200 [05:52<4:43:59, 14.50s/it]
+  2%|▏         | 26/1200 [06:06<4:37:14, 14.17s/it]
+                                                   
+
+  2%|▏         | 26/1200 [06:06<4:37:14, 14.17s/it]
+  2%|▏         | 27/1200 [06:19<4:32:08, 13.92s/it]
+                                                   
+
+  2%|▏         | 27/1200 [06:19<4:32:08, 13.92s/it]
+  2%|▏         | 28/1200 [06:32<4:27:49, 13.71s/it]
+                                                   
+
+  2%|▏         | 28/1200 [06:32<4:27:49, 13.71s/it]
+  2%|▏         | 29/1200 [06:46<4:25:08, 13.59s/it]
+                                                   
+
+  2%|▏         | 29/1200 [06:46<4:25:08, 13.59s/it]
+  2%|▎         | 30/1200 [06:59<4:22:57, 13.49s/it]
+                                                   
+
+  2%|▎         | 30/1200 [06:59<4:22:57, 13.49s/it]
+  3%|▎         | 31/1200 [07:12<4:21:57, 13.45s/it]
+                                                   
+
+  3%|▎         | 31/1200 [07:12<4:21:57, 13.45s/it]
+  3%|▎         | 32/1200 [07:26<4:20:49, 13.40s/it]
+                                                   
+
+  3%|▎         | 32/1200 [07:26<4:20:49, 13.40s/it]
+  3%|▎         | 33/1200 [07:39<4:21:17, 13.43s/it]
+                                                   
+
+  3%|▎         | 33/1200 [07:39<4:21:17, 13.43s/it]
+  3%|▎         | 34/1200 [07:52<4:20:01, 13.38s/it]
+                                                   
+
+  3%|▎         | 34/1200 [07:52<4:20:01, 13.38s/it]
+  3%|▎         | 35/1200 [08:06<4:19:25, 13.36s/it]
+                                                   
+
+  3%|▎         | 35/1200 [08:06<4:19:25, 13.36s/it]
+  3%|▎         | 36/1200 [08:19<4:18:28, 13.32s/it]
+                                                   
+
+  3%|▎         | 36/1200 [08:19<4:18:28, 13.32s/it]
+  3%|▎         | 37/1200 [08:32<4:18:32, 13.34s/it]
+                                                   
+
+  3%|▎         | 37/1200 [08:32<4:18:32, 13.34s/it]
+  3%|▎         | 38/1200 [08:46<4:18:24, 13.34s/it]
+                                                   
+
+  3%|▎         | 38/1200 [08:46<4:18:24, 13.34s/it]
+  3%|▎         | 39/1200 [08:59<4:18:22, 13.35s/it]
+                                                   
+
+  3%|▎         | 39/1200 [08:59<4:18:22, 13.35s/it]
+  3%|▎         | 40/1200 [09:12<4:17:28, 13.32s/it]
+                                                   
+
+  3%|▎         | 40/1200 [09:12<4:17:28, 13.32s/it]
+  3%|▎         | 41/1200 [09:25<4:17:05, 13.31s/it]
+                                                   
+
+  3%|▎         | 41/1200 [09:25<4:17:05, 13.31s/it]
+  4%|▎         | 42/1200 [09:39<4:16:21, 13.28s/it]
+                                                   
+
+  4%|▎         | 42/1200 [09:39<4:16:21, 13.28s/it]
+  4%|▎         | 43/1200 [09:52<4:16:17, 13.29s/it]
+                                                   
+
+  4%|▎         | 43/1200 [09:52<4:16:17, 13.29s/it]
+  4%|▎         | 44/1200 [10:05<4:15:25, 13.26s/it]
+                                                   
+
+  4%|▎         | 44/1200 [10:05<4:15:25, 13.26s/it]
+  4%|▍         | 45/1200 [10:18<4:15:14, 13.26s/it]
+                                                   
+
+  4%|▍         | 45/1200 [10:18<4:15:14, 13.26s/it]
+  4%|▍         | 46/1200 [10:32<4:14:18, 13.22s/it]
+                                                   
+
+  4%|▍         | 46/1200 [10:32<4:14:18, 13.22s/it]
+  4%|▍         | 47/1200 [10:45<4:13:47, 13.21s/it]
+                                                   
+
+  4%|▍         | 47/1200 [10:45<4:13:47, 13.21s/it]
+  4%|▍         | 48/1200 [10:58<4:14:08, 13.24s/it]
+                                                   
+
+  4%|▍         | 48/1200 [10:58<4:14:08, 13.24s/it]
+  4%|▍         | 49/1200 [11:15<4:36:02, 14.39s/it]
+                                                   
+
+  4%|▍         | 49/1200 [11:15<4:36:02, 14.39s/it]
+  4%|▍         | 50/1200 [11:28<4:29:36, 14.07s/it]
+                                                   
+
+  4%|▍         | 50/1200 [11:28<4:29:36, 14.07s/it]
+  4%|▍         | 51/1200 [11:42<4:25:08, 13.85s/it]
+                                                   
+
+  4%|▍         | 51/1200 [11:42<4:25:08, 13.85s/it]
+  4%|▍         | 52/1200 [11:55<4:21:36, 13.67s/it]
+                                                   
+
+  4%|▍         | 52/1200 [11:55<4:21:36, 13.67s/it]
+  4%|▍         | 53/1200 [12:08<4:19:24, 13.57s/it]
+                                                   
+
+  4%|▍         | 53/1200 [12:08<4:19:24, 13.57s/it]
+  4%|▍         | 54/1200 [12:22<4:17:41, 13.49s/it]
+                                                   
+
+  4%|▍         | 54/1200 [12:22<4:17:41, 13.49s/it]
+  5%|▍         | 55/1200 [12:35<4:16:02, 13.42s/it]
+                                                   
+
+  5%|▍         | 55/1200 [12:35<4:16:02, 13.42s/it]
+  5%|▍         | 56/1200 [12:48<4:14:44, 13.36s/it]
+                                                   
+
+  5%|▍         | 56/1200 [12:48<4:14:44, 13.36s/it]
+  5%|▍         | 57/1200 [13:01<4:14:06, 13.34s/it]
+                                                   
+
+  5%|▍         | 57/1200 [13:01<4:14:06, 13.34s/it]
+  5%|▍         | 58/1200 [13:15<4:13:24, 13.31s/it]
+                                                   
+
+  5%|▍         | 58/1200 [13:15<4:13:24, 13.31s/it]
+  5%|▍         | 59/1200 [13:28<4:13:36, 13.34s/it]
+                                                   
+
+  5%|▍         | 59/1200 [13:28<4:13:36, 13.34s/it]
+  5%|▌         | 60/1200 [13:41<4:13:25, 13.34s/it]
+                                                   
+
+  5%|▌         | 60/1200 [13:41<4:13:25, 13.34s/it]
+  5%|▌         | 61/1200 [13:55<4:12:59, 13.33s/it]
+                                                   
+
+  5%|▌         | 61/1200 [13:55<4:12:59, 13.33s/it]
+  5%|▌         | 62/1200 [14:08<4:12:42, 13.32s/it]
+                                                   
+
+  5%|▌         | 62/1200 [14:08<4:12:42, 13.32s/it]
+  5%|▌         | 63/1200 [14:21<4:12:26, 13.32s/it]
+                                                   
+
+  5%|▌         | 63/1200 [14:21<4:12:26, 13.32s/it]
+  5%|▌         | 64/1200 [14:35<4:12:18, 13.33s/it]
+                                                   
+
+  5%|▌         | 64/1200 [14:35<4:12:18, 13.33s/it]
+  5%|▌         | 65/1200 [14:48<4:11:08, 13.28s/it]
+                                                   
+
+  5%|▌         | 65/1200 [14:48<4:11:08, 13.28s/it]
+  6%|▌         | 66/1200 [15:01<4:11:02, 13.28s/it]
+                                                   
+
+  6%|▌         | 66/1200 [15:01<4:11:02, 13.28s/it]
+  6%|▌         | 67/1200 [15:14<4:10:51, 13.28s/it]
+                                                   
+
+  6%|▌         | 67/1200 [15:14<4:10:51, 13.28s/it]
+  6%|▌         | 68/1200 [15:28<4:10:39, 13.29s/it]
+                                                   
+
+  6%|▌         | 68/1200 [15:28<4:10:39, 13.29s/it]
+  6%|▌         | 69/1200 [15:41<4:10:10, 13.27s/it]
+                                                   
+
+  6%|▌         | 69/1200 [15:41<4:10:10, 13.27s/it]
+  6%|▌         | 70/1200 [15:54<4:09:35, 13.25s/it]
+                                                   
+
+  6%|▌         | 70/1200 [15:54<4:09:35, 13.25s/it]
+  6%|▌         | 71/1200 [16:07<4:08:45, 13.22s/it]
+                                                   
+
+  6%|▌         | 71/1200 [16:07<4:08:45, 13.22s/it]
+  6%|▌         | 72/1200 [16:21<4:10:01, 13.30s/it]
+                                                   
+
+  6%|▌         | 72/1200 [16:21<4:10:01, 13.30s/it]
+  6%|▌         | 73/1200 [16:38<4:34:05, 14.59s/it]
+                                                   
+
+  6%|▌         | 73/1200 [16:38<4:34:05, 14.59s/it]
+  6%|▌         | 74/1200 [16:52<4:26:30, 14.20s/it]
+                                                   
+
+  6%|▌         | 74/1200 [16:52<4:26:30, 14.20s/it]
+  6%|▋         | 75/1200 [17:05<4:20:47, 13.91s/it]
+                                                   
+
+  6%|▋         | 75/1200 [17:05<4:20:47, 13.91s/it]
+  6%|▋         | 76/1200 [17:18<4:17:17, 13.73s/it]
+                                                   
+
+  6%|▋         | 76/1200 [17:18<4:17:17, 13.73s/it]
+  6%|▋         | 77/1200 [17:31<4:13:59, 13.57s/it]
+                                                   
+
+  6%|▋         | 77/1200 [17:31<4:13:59, 13.57s/it]
+  6%|▋         | 78/1200 [17:45<4:11:50, 13.47s/it]
+                                                   
+
+  6%|▋         | 78/1200 [17:45<4:11:50, 13.47s/it]
+  7%|▋         | 79/1200 [17:58<4:10:50, 13.43s/it]
+                                                   
+
+  7%|▋         | 79/1200 [17:58<4:10:50, 13.43s/it]
+  7%|▋         | 80/1200 [18:11<4:10:06, 13.40s/it]
+                                                   
+
+  7%|▋         | 80/1200 [18:11<4:10:06, 13.40s/it]
+  7%|▋         | 81/1200 [18:25<4:08:58, 13.35s/it]
+                                                   
+
+  7%|▋         | 81/1200 [18:25<4:08:58, 13.35s/it]
+  7%|▋         | 82/1200 [18:38<4:08:28, 13.34s/it]
+                                                   
+
+  7%|▋         | 82/1200 [18:38<4:08:28, 13.34s/it]
+  7%|▋         | 83/1200 [18:51<4:07:54, 13.32s/it]
+                                                   
+
+  7%|▋         | 83/1200 [18:51<4:07:54, 13.32s/it]
+  7%|▋         | 84/1200 [19:04<4:07:11, 13.29s/it]
+                                                   
+
+  7%|▋         | 84/1200 [19:04<4:07:11, 13.29s/it]
+  7%|▋         | 85/1200 [19:18<4:06:28, 13.26s/it]
+                                                   
+
+  7%|▋         | 85/1200 [19:18<4:06:28, 13.26s/it]
+  7%|▋         | 86/1200 [19:31<4:06:56, 13.30s/it]
+                                                   
+
+  7%|▋         | 86/1200 [19:31<4:06:56, 13.30s/it]
+  7%|▋         | 87/1200 [19:44<4:07:01, 13.32s/it]
+                                                   
+
+  7%|▋         | 87/1200 [19:44<4:07:01, 13.32s/it]
+  7%|▋         | 88/1200 [19:58<4:06:11, 13.28s/it]
+                                                   
+
+  7%|▋         | 88/1200 [19:58<4:06:11, 13.28s/it]
+  7%|▋         | 89/1200 [20:11<4:05:57, 13.28s/it]
+                                                   
+
+  7%|▋         | 89/1200 [20:11<4:05:57, 13.28s/it]
+  8%|▊         | 90/1200 [20:24<4:05:27, 13.27s/it]
+                                                   
+
+  8%|▊         | 90/1200 [20:24<4:05:27, 13.27s/it]
+  8%|▊         | 91/1200 [20:37<4:05:03, 13.26s/it]
+                                                   
+
+  8%|▊         | 91/1200 [20:37<4:05:03, 13.26s/it]
+  8%|▊         | 92/1200 [20:50<4:04:29, 13.24s/it]
+                                                   
+
+  8%|▊         | 92/1200 [20:50<4:04:29, 13.24s/it]
+  8%|▊         | 93/1200 [21:04<4:04:31, 13.25s/it]
+                                                   
+
+  8%|▊         | 93/1200 [21:04<4:04:31, 13.25s/it]
+  8%|▊         | 94/1200 [21:17<4:04:07, 13.24s/it]
+                                                   
+
+  8%|▊         | 94/1200 [21:17<4:04:07, 13.24s/it]
+  8%|▊         | 95/1200 [21:30<4:03:44, 13.23s/it]
+                                                   
+
+  8%|▊         | 95/1200 [21:30<4:03:44, 13.23s/it]
+  8%|▊         | 96/1200 [21:44<4:05:40, 13.35s/it]
+                                                   
+
+  8%|▊         | 96/1200 [21:44<4:05:40, 13.35s/it]
+  8%|▊         | 97/1200 [22:01<4:26:25, 14.49s/it]
+                                                   
+
+  8%|▊         | 97/1200 [22:01<4:26:25, 14.49s/it]
+  8%|▊         | 98/1200 [22:14<4:19:39, 14.14s/it]
+                                                   
+
+  8%|▊         | 98/1200 [22:14<4:19:39, 14.14s/it]
+  8%|▊         | 99/1200 [22:28<4:14:51, 13.89s/it]
+                                                   
+
+  8%|▊         | 99/1200 [22:28<4:14:51, 13.89s/it]
+  8%|▊         | 100/1200 [22:41<4:11:16, 13.71s/it]
+                                                    
+
+  8%|▊         | 100/1200 [22:41<4:11:16, 13.71s/it]/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+  8%|▊         | 101/1200 [23:17<6:14:16, 20.43s/it]
+                                                    
+
+  8%|▊         | 101/1200 [23:17<6:14:16, 20.43s/it]
+  8%|▊         | 102/1200 [23:31<5:35:57, 18.36s/it]
+                                                    
+
+  8%|▊         | 102/1200 [23:31<5:35:57, 18.36s/it]
+  9%|▊         | 103/1200 [23:44<5:07:50, 16.84s/it]
+                                                    
+
+  9%|▊         | 103/1200 [23:44<5:07:50, 16.84s/it]
+  9%|▊         | 104/1200 [23:57<4:47:54, 15.76s/it]
+                                                    
+
+  9%|▊         | 104/1200 [23:57<4:47:54, 15.76s/it]
+  9%|▉         | 105/1200 [24:10<4:34:31, 15.04s/it]
+                                                    
+
+  9%|▉         | 105/1200 [24:10<4:34:31, 15.04s/it]
+  9%|▉         | 106/1200 [24:24<4:24:14, 14.49s/it]
+                                                    
+
+  9%|▉         | 106/1200 [24:24<4:24:14, 14.49s/it]
+  9%|▉         | 107/1200 [24:37<4:17:35, 14.14s/it]
+                                                    
+
+  9%|▉         | 107/1200 [24:37<4:17:35, 14.14s/it]
+  9%|▉         | 108/1200 [24:50<4:13:04, 13.90s/it]
+                                                    
+
+  9%|▉         | 108/1200 [24:50<4:13:04, 13.90s/it]
+  9%|▉         | 109/1200 [25:04<4:09:47, 13.74s/it]
+                                                    
+
+  9%|▉         | 109/1200 [25:04<4:09:47, 13.74s/it]
+  9%|▉         | 110/1200 [25:17<4:07:11, 13.61s/it]
+                                                    
+
+  9%|▉         | 110/1200 [25:17<4:07:11, 13.61s/it]
+  9%|▉         | 111/1200 [25:30<4:04:38, 13.48s/it]
+                                                    
+
+  9%|▉         | 111/1200 [25:30<4:04:38, 13.48s/it]
+  9%|▉         | 112/1200 [25:43<4:03:10, 13.41s/it]
+                                                    
+
+  9%|▉         | 112/1200 [25:43<4:03:10, 13.41s/it]
+  9%|▉         | 113/1200 [25:57<4:02:43, 13.40s/it]
+                                                    
+
+  9%|▉         | 113/1200 [25:57<4:02:43, 13.40s/it]
+ 10%|▉         | 114/1200 [26:10<4:01:08, 13.32s/it]
+                                                    
+
+ 10%|▉         | 114/1200 [26:10<4:01:08, 13.32s/it]
+ 10%|▉         | 115/1200 [26:23<4:00:34, 13.30s/it]
+                                                    
+
+ 10%|▉         | 115/1200 [26:23<4:00:34, 13.30s/it]
+ 10%|▉         | 116/1200 [26:36<3:59:57, 13.28s/it]
+                                                    
+
+ 10%|▉         | 116/1200 [26:36<3:59:57, 13.28s/it]
+ 10%|▉         | 117/1200 [26:50<3:59:32, 13.27s/it]
+                                                    
+
+ 10%|▉         | 117/1200 [26:50<3:59:32, 13.27s/it]
+ 10%|▉         | 118/1200 [27:03<3:59:14, 13.27s/it]
+                                                    
+
+ 10%|▉         | 118/1200 [27:03<3:59:14, 13.27s/it]
+ 10%|▉         | 119/1200 [27:16<3:59:01, 13.27s/it]
+                                                    
+
+ 10%|▉         | 119/1200 [27:16<3:59:01, 13.27s/it]
+ 10%|█         | 120/1200 [27:30<4:00:00, 13.33s/it]
+                                                    
+
+ 10%|█         | 120/1200 [27:30<4:00:00, 13.33s/it]
+ 10%|█         | 121/1200 [27:47<4:20:01, 14.46s/it]
+                                                    
+
+ 10%|█         | 121/1200 [27:47<4:20:01, 14.46s/it]
+ 10%|█         | 122/1200 [28:00<4:13:16, 14.10s/it]
+                                                    
+
+ 10%|█         | 122/1200 [28:00<4:13:16, 14.10s/it]
+ 10%|█         | 123/1200 [28:13<4:08:58, 13.87s/it]
+                                                    
+
+ 10%|█         | 123/1200 [28:13<4:08:58, 13.87s/it]
+ 10%|█         | 124/1200 [28:27<4:05:14, 13.68s/it]
+                                                    
+
+ 10%|█         | 124/1200 [28:27<4:05:14, 13.68s/it]
+ 10%|█         | 125/1200 [28:40<4:03:11, 13.57s/it]
+                                                    
+
+ 10%|█         | 125/1200 [28:40<4:03:11, 13.57s/it]
+ 10%|█         | 126/1200 [28:53<4:01:38, 13.50s/it]
+                                                    
+
+ 10%|█         | 126/1200 [28:53<4:01:38, 13.50s/it]
+ 11%|█         | 127/1200 [29:06<4:00:06, 13.43s/it]
+                                                    
+
+ 11%|█         | 127/1200 [29:06<4:00:06, 13.43s/it]
+ 11%|█         | 128/1200 [29:20<3:59:07, 13.38s/it]
+                                                    
+
+ 11%|█         | 128/1200 [29:20<3:59:07, 13.38s/it]
+ 11%|█         | 129/1200 [29:33<3:58:27, 13.36s/it]
+                                                    
+
+ 11%|█         | 129/1200 [29:33<3:58:27, 13.36s/it]
+ 11%|█         | 130/1200 [29:46<3:57:52, 13.34s/it]
+                                                    
+
+ 11%|█         | 130/1200 [29:46<3:57:52, 13.34s/it]
+ 11%|█         | 131/1200 [30:00<3:57:20, 13.32s/it]
+                                                    
+
+ 11%|█         | 131/1200 [30:00<3:57:20, 13.32s/it]
+ 11%|█         | 132/1200 [30:13<3:57:11, 13.33s/it]
+                                                    
+
+ 11%|█         | 132/1200 [30:13<3:57:11, 13.33s/it]
+ 11%|█         | 133/1200 [30:26<3:57:13, 13.34s/it]
+                                                    
+
+ 11%|█         | 133/1200 [30:26<3:57:13, 13.34s/it]
+ 11%|█         | 134/1200 [30:40<3:57:07, 13.35s/it]
+                                                    
+
+ 11%|█         | 134/1200 [30:40<3:57:07, 13.35s/it]
+ 11%|█▏        | 135/1200 [30:53<3:57:34, 13.38s/it]
+                                                    
+
+ 11%|█▏        | 135/1200 [30:53<3:57:34, 13.38s/it]
+ 11%|█▏        | 136/1200 [31:06<3:56:36, 13.34s/it]
+                                                    
+
+ 11%|█▏        | 136/1200 [31:06<3:56:36, 13.34s/it]
+ 11%|█▏        | 137/1200 [31:20<3:55:37, 13.30s/it]
+                                                    
+
+ 11%|█▏        | 137/1200 [31:20<3:55:37, 13.30s/it]
+ 12%|█▏        | 138/1200 [31:33<3:55:09, 13.29s/it]
+                                                    
+
+ 12%|█▏        | 138/1200 [31:33<3:55:09, 13.29s/it]
+ 12%|█▏        | 139/1200 [31:46<3:54:35, 13.27s/it]
+                                                    
+
+ 12%|█▏        | 139/1200 [31:46<3:54:35, 13.27s/it]
+ 12%|█▏        | 140/1200 [31:59<3:54:19, 13.26s/it]
+                                                    
+
+ 12%|█▏        | 140/1200 [31:59<3:54:19, 13.26s/it]
+ 12%|█▏        | 141/1200 [32:13<3:53:37, 13.24s/it]
+                                                    
+
+ 12%|█▏        | 141/1200 [32:13<3:53:37, 13.24s/it]
+ 12%|█▏        | 142/1200 [32:26<3:53:28, 13.24s/it]
+                                                    
+
+ 12%|█▏        | 142/1200 [32:26<3:53:28, 13.24s/it]
+ 12%|█▏        | 143/1200 [32:39<3:53:12, 13.24s/it]
+                                                    
+
+ 12%|█▏        | 143/1200 [32:39<3:53:12, 13.24s/it]
+ 12%|█▏        | 144/1200 [32:52<3:53:40, 13.28s/it]
+                                                    
+
+ 12%|█▏        | 144/1200 [32:52<3:53:40, 13.28s/it]
+ 12%|█▏        | 145/1200 [33:09<4:12:26, 14.36s/it]
+                                                    
+
+ 12%|█▏        | 145/1200 [33:09<4:12:26, 14.36s/it]
+ 12%|█▏        | 146/1200 [33:23<4:06:58, 14.06s/it]
+                                                    
+
+ 12%|█▏        | 146/1200 [33:23<4:06:58, 14.06s/it]
+ 12%|█▏        | 147/1200 [33:36<4:02:39, 13.83s/it]
+                                                    
+
+ 12%|█▏        | 147/1200 [33:36<4:02:39, 13.83s/it]
+ 12%|█▏        | 148/1200 [33:49<3:59:29, 13.66s/it]
+                                                    
+
+ 12%|█▏        | 148/1200 [33:49<3:59:29, 13.66s/it]
+ 12%|█▏        | 149/1200 [34:03<3:58:13, 13.60s/it]
+                                                    
+
+ 12%|█▏        | 149/1200 [34:03<3:58:13, 13.60s/it]
+ 12%|█▎        | 150/1200 [34:16<3:56:02, 13.49s/it]
+                                                    
+
+ 12%|█▎        | 150/1200 [34:16<3:56:02, 13.49s/it]
+ 13%|█▎        | 151/1200 [34:29<3:54:54, 13.44s/it]
+                                                    
+
+ 13%|█▎        | 151/1200 [34:29<3:54:54, 13.44s/it]
+ 13%|█▎        | 152/1200 [34:43<3:54:09, 13.41s/it]
+                                                    
+
+ 13%|█▎        | 152/1200 [34:43<3:54:09, 13.41s/it]
+ 13%|█▎        | 153/1200 [34:56<3:53:13, 13.37s/it]
+                                                    
+
+ 13%|█▎        | 153/1200 [34:56<3:53:13, 13.37s/it]
+ 13%|█▎        | 154/1200 [35:09<3:52:41, 13.35s/it]
+                                                    
+
+ 13%|█▎        | 154/1200 [35:09<3:52:41, 13.35s/it]
+ 13%|█▎        | 155/1200 [35:22<3:52:20, 13.34s/it]
+                                                    
+
+ 13%|█▎        | 155/1200 [35:22<3:52:20, 13.34s/it]
+ 13%|█▎        | 156/1200 [35:36<3:52:05, 13.34s/it]
+                                                    
+
+ 13%|█▎        | 156/1200 [35:36<3:52:05, 13.34s/it]
+ 13%|█▎        | 157/1200 [35:49<3:51:37, 13.32s/it]
+                                                    
+
+ 13%|█▎        | 157/1200 [35:49<3:51:37, 13.32s/it]
+ 13%|█▎        | 158/1200 [36:02<3:51:21, 13.32s/it]
+                                                    
+
+ 13%|█▎        | 158/1200 [36:02<3:51:21, 13.32s/it]
+ 13%|█▎        | 159/1200 [36:16<3:51:04, 13.32s/it]
+                                                    
+
+ 13%|█▎        | 159/1200 [36:16<3:51:04, 13.32s/it]
+ 13%|█▎        | 160/1200 [36:29<3:50:08, 13.28s/it]
+                                                    
+
+ 13%|█▎        | 160/1200 [36:29<3:50:08, 13.28s/it]
+ 13%|█▎        | 161/1200 [36:42<3:49:44, 13.27s/it]
+                                                    
+
+ 13%|█▎        | 161/1200 [36:42<3:49:44, 13.27s/it]
+ 14%|█▎        | 162/1200 [36:55<3:49:07, 13.24s/it]
+                                                    
+
+ 14%|█▎        | 162/1200 [36:55<3:49:07, 13.24s/it]
+ 14%|█▎        | 163/1200 [37:09<3:48:55, 13.25s/it]
+                                                    
+
+ 14%|█▎        | 163/1200 [37:09<3:48:55, 13.25s/it]
+ 14%|█▎        | 164/1200 [37:22<3:48:31, 13.23s/it]
+                                                    
+
+ 14%|█▎        | 164/1200 [37:22<3:48:31, 13.23s/it]
+ 14%|█▍        | 165/1200 [37:35<3:47:52, 13.21s/it]
+                                                    
+
+ 14%|█▍        | 165/1200 [37:35<3:47:52, 13.21s/it]
+ 14%|█▍        | 166/1200 [37:48<3:47:55, 13.23s/it]
+                                                    
+
+ 14%|█▍        | 166/1200 [37:48<3:47:55, 13.23s/it]
+ 14%|█▍        | 167/1200 [38:01<3:47:16, 13.20s/it]
+                                                    
+
+ 14%|█▍        | 167/1200 [38:01<3:47:16, 13.20s/it]
+ 14%|█▍        | 168/1200 [38:15<3:47:32, 13.23s/it]
+                                                    
+
+ 14%|█▍        | 168/1200 [38:15<3:47:32, 13.23s/it]
+ 14%|█▍        | 169/1200 [38:32<4:06:12, 14.33s/it]
+                                                    
+
+ 14%|█▍        | 169/1200 [38:32<4:06:12, 14.33s/it]
+ 14%|█▍        | 170/1200 [38:45<4:00:32, 14.01s/it]
+                                                    
+
+ 14%|█▍        | 170/1200 [38:45<4:00:32, 14.01s/it]
+ 14%|█▍        | 171/1200 [38:58<3:56:22, 13.78s/it]
+                                                    
+
+ 14%|█▍        | 171/1200 [38:58<3:56:22, 13.78s/it]
+ 14%|█▍        | 172/1200 [39:11<3:53:40, 13.64s/it]
+                                                    
+
+ 14%|█▍        | 172/1200 [39:11<3:53:40, 13.64s/it]
+ 14%|█▍        | 173/1200 [39:25<3:51:46, 13.54s/it]
+                                                    
+
+ 14%|█▍        | 173/1200 [39:25<3:51:46, 13.54s/it]
+ 14%|█▍        | 174/1200 [39:38<3:51:34, 13.54s/it]
+                                                    
+
+ 14%|█▍        | 174/1200 [39:38<3:51:34, 13.54s/it]
+ 15%|█▍        | 175/1200 [39:51<3:50:01, 13.46s/it]
+                                                    
+
+ 15%|█▍        | 175/1200 [39:51<3:50:01, 13.46s/it]
+ 15%|█▍        | 176/1200 [40:05<3:50:01, 13.48s/it]
+                                                    
+
+ 15%|█▍        | 176/1200 [40:05<3:50:01, 13.48s/it]
+ 15%|█▍        | 177/1200 [40:18<3:48:25, 13.40s/it]
+                                                    
+
+ 15%|█▍        | 177/1200 [40:18<3:48:25, 13.40s/it]
+ 15%|█▍        | 178/1200 [40:32<3:47:48, 13.37s/it]
+                                                    
+
+ 15%|█▍        | 178/1200 [40:32<3:47:48, 13.37s/it]
+ 15%|█▍        | 179/1200 [40:45<3:47:21, 13.36s/it]
+                                                    
+
+ 15%|█▍        | 179/1200 [40:45<3:47:21, 13.36s/it]
+ 15%|█▌        | 180/1200 [40:58<3:46:49, 13.34s/it]
+                                                    
+
+ 15%|█▌        | 180/1200 [40:58<3:46:49, 13.34s/it]
+ 15%|█▌        | 181/1200 [41:11<3:46:23, 13.33s/it]
+                                                    
+
+ 15%|█▌        | 181/1200 [41:11<3:46:23, 13.33s/it]
+ 15%|█▌        | 182/1200 [41:25<3:46:09, 13.33s/it]
+                                                    
+
+ 15%|█▌        | 182/1200 [41:25<3:46:09, 13.33s/it]
+ 15%|█▌        | 183/1200 [41:38<3:45:03, 13.28s/it]
+                                                    
+
+ 15%|█▌        | 183/1200 [41:38<3:45:03, 13.28s/it]
+ 15%|█▌        | 184/1200 [41:51<3:44:17, 13.25s/it]
+                                                    
+
+ 15%|█▌        | 184/1200 [41:51<3:44:17, 13.25s/it]
+ 15%|█▌        | 185/1200 [42:04<3:43:42, 13.22s/it]
+                                                    
+
+ 15%|█▌        | 185/1200 [42:04<3:43:42, 13.22s/it]
+ 16%|█▌        | 186/1200 [42:18<3:43:36, 13.23s/it]
+                                                    
+
+ 16%|█▌        | 186/1200 [42:18<3:43:36, 13.23s/it]
+ 16%|█▌        | 187/1200 [42:31<3:43:11, 13.22s/it]
+                                                    
+
+ 16%|█▌        | 187/1200 [42:31<3:43:11, 13.22s/it]
+ 16%|█▌        | 188/1200 [42:44<3:42:58, 13.22s/it]
+                                                    
+
+ 16%|█▌        | 188/1200 [42:44<3:42:58, 13.22s/it]
+ 16%|█▌        | 189/1200 [42:57<3:42:59, 13.23s/it]
+                                                    
+
+ 16%|█▌        | 189/1200 [42:57<3:42:59, 13.23s/it]
+ 16%|█▌        | 190/1200 [43:10<3:43:00, 13.25s/it]
+                                                    
+
+ 16%|█▌        | 190/1200 [43:10<3:43:00, 13.25s/it]
+ 16%|█▌        | 191/1200 [43:24<3:42:40, 13.24s/it]
+                                                    
+
+ 16%|█▌        | 191/1200 [43:24<3:42:40, 13.24s/it]
+ 16%|█▌        | 192/1200 [43:37<3:42:58, 13.27s/it]
+                                                    
+
+ 16%|█▌        | 192/1200 [43:37<3:42:58, 13.27s/it]
+ 16%|█▌        | 193/1200 [43:54<4:02:01, 14.42s/it]
+                                                    
+
+ 16%|█▌        | 193/1200 [43:54<4:02:01, 14.42s/it]
+ 16%|█▌        | 194/1200 [44:07<3:56:18, 14.09s/it]
+                                                    
+
+ 16%|█▌        | 194/1200 [44:07<3:56:18, 14.09s/it]
+ 16%|█▋        | 195/1200 [44:21<3:51:40, 13.83s/it]
+                                                    
+
+ 16%|█▋        | 195/1200 [44:21<3:51:40, 13.83s/it]
+ 16%|█▋        | 196/1200 [44:34<3:48:44, 13.67s/it]
+                                                    
+
+ 16%|█▋        | 196/1200 [44:34<3:48:44, 13.67s/it]
+ 16%|█▋        | 197/1200 [44:47<3:46:37, 13.56s/it]
+                                                    
+
+ 16%|█▋        | 197/1200 [44:47<3:46:37, 13.56s/it]
+ 16%|█▋        | 198/1200 [45:01<3:45:51, 13.52s/it]
+                                                    
+
+ 16%|█▋        | 198/1200 [45:01<3:45:51, 13.52s/it]
+ 17%|█▋        | 199/1200 [45:14<3:44:18, 13.45s/it]
+                                                    
+
+ 17%|█▋        | 199/1200 [45:14<3:44:18, 13.45s/it]
+ 17%|█▋        | 200/1200 [45:27<3:43:34, 13.41s/it]
+                                                    
+
+ 17%|█▋        | 200/1200 [45:27<3:43:34, 13.41s/it]/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+ 17%|█▋        | 201/1200 [46:03<5:36:09, 20.19s/it]
+                                                    
+
+ 17%|█▋        | 201/1200 [46:03<5:36:09, 20.19s/it]
+ 17%|█▋        | 202/1200 [46:17<5:01:31, 18.13s/it]
+                                                    
+
+ 17%|█▋        | 202/1200 [46:17<5:01:31, 18.13s/it]
+ 17%|█▋        | 203/1200 [46:30<4:37:08, 16.68s/it]
+                                                    
+
+ 17%|█▋        | 203/1200 [46:30<4:37:08, 16.68s/it]
+ 17%|█▋        | 204/1200 [46:43<4:20:15, 15.68s/it]
+                                                    
+
+ 17%|█▋        | 204/1200 [46:43<4:20:15, 15.68s/it]
+ 17%|█▋        | 205/1200 [46:57<4:07:56, 14.95s/it]
+                                                    
+
+ 17%|█▋        | 205/1200 [46:57<4:07:56, 14.95s/it]
+ 17%|█▋        | 206/1200 [47:10<3:59:06, 14.43s/it]
+                                                    
+
+ 17%|█▋        | 206/1200 [47:10<3:59:06, 14.43s/it]
+ 17%|█▋        | 207/1200 [47:23<3:52:49, 14.07s/it]
+                                                    
+
+ 17%|█▋        | 207/1200 [47:23<3:52:49, 14.07s/it]
+ 17%|█▋        | 208/1200 [47:36<3:48:33, 13.82s/it]
+                                                    
+
+ 17%|█▋        | 208/1200 [47:36<3:48:33, 13.82s/it]
+ 17%|█▋        | 209/1200 [47:49<3:45:06, 13.63s/it]
+                                                    
+
+ 17%|█▋        | 209/1200 [47:49<3:45:06, 13.63s/it]
+ 18%|█▊        | 210/1200 [48:03<3:43:21, 13.54s/it]
+                                                    
+
+ 18%|█▊        | 210/1200 [48:03<3:43:21, 13.54s/it]
+ 18%|█▊        | 211/1200 [48:16<3:41:50, 13.46s/it]
+                                                    
+
+ 18%|█▊        | 211/1200 [48:16<3:41:50, 13.46s/it]
+ 18%|█▊        | 212/1200 [48:29<3:40:48, 13.41s/it]
+                                                    
+
+ 18%|█▊        | 212/1200 [48:29<3:40:48, 13.41s/it]
+ 18%|█▊        | 213/1200 [48:42<3:39:19, 13.33s/it]
+                                                    
+
+ 18%|█▊        | 213/1200 [48:42<3:39:19, 13.33s/it]
+ 18%|█▊        | 214/1200 [48:56<3:38:46, 13.31s/it]
+                                                    
+
+ 18%|█▊        | 214/1200 [48:56<3:38:46, 13.31s/it]
+ 18%|█▊        | 215/1200 [49:09<3:38:27, 13.31s/it]
+                                                    
+
+ 18%|█▊        | 215/1200 [49:09<3:38:27, 13.31s/it]
+ 18%|█▊        | 216/1200 [49:22<3:38:29, 13.32s/it]
+                                                    
+
+ 18%|█▊        | 216/1200 [49:22<3:38:29, 13.32s/it]
+ 18%|█▊        | 217/1200 [49:39<3:56:43, 14.45s/it]
+                                                    
+
+ 18%|█▊        | 217/1200 [49:39<3:56:43, 14.45s/it]
+ 18%|█▊        | 218/1200 [49:53<3:50:53, 14.11s/it]
+                                                    
+
+ 18%|█▊        | 218/1200 [49:53<3:50:53, 14.11s/it]
+ 18%|█▊        | 219/1200 [50:06<3:46:50, 13.87s/it]
+                                                    
+
+ 18%|█▊        | 219/1200 [50:06<3:46:50, 13.87s/it]
+ 18%|█▊        | 220/1200 [50:19<3:44:02, 13.72s/it]
+                                                    
+
+ 18%|█▊        | 220/1200 [50:19<3:44:02, 13.72s/it]
+ 18%|█▊        | 221/1200 [50:33<3:41:45, 13.59s/it]
+                                                    
+
+ 18%|█▊        | 221/1200 [50:33<3:41:45, 13.59s/it]
+ 18%|█▊        | 222/1200 [50:46<3:40:33, 13.53s/it]
+                                                    
+
+ 18%|█▊        | 222/1200 [50:46<3:40:33, 13.53s/it]
+ 19%|█▊        | 223/1200 [50:59<3:39:07, 13.46s/it]
+                                                    
+
+ 19%|█▊        | 223/1200 [50:59<3:39:07, 13.46s/it]
+ 19%|█▊        | 224/1200 [51:13<3:38:52, 13.46s/it]
+                                                    
+
+ 19%|█▊        | 224/1200 [51:13<3:38:52, 13.46s/it]
+ 19%|█▉        | 225/1200 [51:26<3:38:02, 13.42s/it]
+                                                    
+
+ 19%|█▉        | 225/1200 [51:26<3:38:02, 13.42s/it]
+ 19%|█▉        | 226/1200 [51:40<3:37:20, 13.39s/it]
+                                                    
+
+ 19%|█▉        | 226/1200 [51:40<3:37:20, 13.39s/it]
+ 19%|█▉        | 227/1200 [51:53<3:36:58, 13.38s/it]
+                                                    
+
+ 19%|█▉        | 227/1200 [51:53<3:36:58, 13.38s/it]
+ 19%|█▉        | 228/1200 [52:06<3:36:42, 13.38s/it]
+                                                    
+
+ 19%|█▉        | 228/1200 [52:06<3:36:42, 13.38s/it]
+ 19%|█▉        | 229/1200 [52:20<3:36:15, 13.36s/it]
+                                                    
+
+ 19%|█▉        | 229/1200 [52:20<3:36:15, 13.36s/it]
+ 19%|█▉        | 230/1200 [52:33<3:35:38, 13.34s/it]
+                                                    
+
+ 19%|█▉        | 230/1200 [52:33<3:35:38, 13.34s/it]
+ 19%|█▉        | 231/1200 [52:46<3:36:31, 13.41s/it]
+                                                    
+
+ 19%|█▉        | 231/1200 [52:46<3:36:31, 13.41s/it]
+ 19%|█▉        | 232/1200 [53:00<3:35:25, 13.35s/it]
+                                                    
+
+ 19%|█▉        | 232/1200 [53:00<3:35:25, 13.35s/it]
+ 19%|█▉        | 233/1200 [53:13<3:34:23, 13.30s/it]
+                                                    
+
+ 19%|█▉        | 233/1200 [53:13<3:34:23, 13.30s/it]
+ 20%|█▉        | 234/1200 [53:26<3:33:22, 13.25s/it]
+                                                    
+
+ 20%|█▉        | 234/1200 [53:26<3:33:22, 13.25s/it]
+ 20%|█▉        | 235/1200 [53:39<3:33:17, 13.26s/it]
+                                                    
+
+ 20%|█▉        | 235/1200 [53:39<3:33:17, 13.26s/it]
+ 20%|█▉        | 236/1200 [53:52<3:32:39, 13.24s/it]
+                                                    
+
+ 20%|█▉        | 236/1200 [53:52<3:32:39, 13.24s/it]
+ 20%|█▉        | 237/1200 [54:06<3:32:31, 13.24s/it]
+                                                    
+
+ 20%|█▉        | 237/1200 [54:06<3:32:31, 13.24s/it]
+ 20%|█▉        | 238/1200 [54:19<3:32:38, 13.26s/it]
+                                                    
+
+ 20%|█▉        | 238/1200 [54:19<3:32:38, 13.26s/it]
+ 20%|█▉        | 239/1200 [54:32<3:31:58, 13.23s/it]
+                                                    
+
+ 20%|█▉        | 239/1200 [54:32<3:31:58, 13.23s/it]
+ 20%|██        | 240/1200 [54:45<3:32:00, 13.25s/it]
+                                                    
+
+ 20%|██        | 240/1200 [54:45<3:32:00, 13.25s/it]
+ 20%|██        | 241/1200 [55:03<3:50:30, 14.42s/it]
+                                                    
+
+ 20%|██        | 241/1200 [55:03<3:50:30, 14.42s/it]
+ 20%|██        | 242/1200 [55:16<3:45:01, 14.09s/it]
+                                                    
+
+ 20%|██        | 242/1200 [55:16<3:45:01, 14.09s/it]
+ 20%|██        | 243/1200 [55:29<3:41:39, 13.90s/it]
+                                                    
+
+ 20%|██        | 243/1200 [55:29<3:41:39, 13.90s/it]
+ 20%|██        | 244/1200 [55:43<3:38:47, 13.73s/it]
+                                                    
+
+ 20%|██        | 244/1200 [55:43<3:38:47, 13.73s/it]
+ 20%|██        | 245/1200 [55:56<3:36:28, 13.60s/it]
+                                                    
+
+ 20%|██        | 245/1200 [55:56<3:36:28, 13.60s/it]
+ 20%|██        | 246/1200 [56:09<3:34:48, 13.51s/it]
+                                                    
+
+ 20%|██        | 246/1200 [56:09<3:34:48, 13.51s/it]
+ 21%|██        | 247/1200 [56:23<3:33:21, 13.43s/it]
+                                                    
+
+ 21%|██        | 247/1200 [56:23<3:33:21, 13.43s/it]
+ 21%|██        | 248/1200 [56:36<3:32:30, 13.39s/it]
+                                                    
+
+ 21%|██        | 248/1200 [56:36<3:32:30, 13.39s/it]
+ 21%|██        | 249/1200 [56:49<3:31:49, 13.36s/it]
+                                                    
+
+ 21%|██        | 249/1200 [56:49<3:31:49, 13.36s/it]
+ 21%|██        | 250/1200 [57:02<3:30:57, 13.32s/it]
+                                                    
+
+ 21%|██        | 250/1200 [57:02<3:30:57, 13.32s/it]
+ 21%|██        | 251/1200 [57:16<3:30:43, 13.32s/it]
+                                                    
+
+ 21%|██        | 251/1200 [57:16<3:30:43, 13.32s/it]
+ 21%|██        | 252/1200 [57:29<3:30:45, 13.34s/it]
+                                                    
+
+ 21%|██        | 252/1200 [57:29<3:30:45, 13.34s/it]
+ 21%|██        | 253/1200 [57:42<3:30:30, 13.34s/it]
+                                                    
+
+ 21%|██        | 253/1200 [57:42<3:30:30, 13.34s/it]
+ 21%|██        | 254/1200 [57:56<3:29:42, 13.30s/it]
+                                                    
+
+ 21%|██        | 254/1200 [57:56<3:29:42, 13.30s/it]
+ 21%|██▏       | 255/1200 [58:09<3:29:04, 13.28s/it]
+                                                    
+
+ 21%|██▏       | 255/1200 [58:09<3:29:04, 13.28s/it]
+ 21%|██▏       | 256/1200 [58:22<3:28:37, 13.26s/it]
+                                                    
+
+ 21%|██▏       | 256/1200 [58:22<3:28:37, 13.26s/it]
+ 21%|██▏       | 257/1200 [58:35<3:28:23, 13.26s/it]
+                                                    
+
+ 21%|██▏       | 257/1200 [58:35<3:28:23, 13.26s/it]
+ 22%|██▏       | 258/1200 [58:48<3:27:28, 13.21s/it]
+                                                    
+
+ 22%|██▏       | 258/1200 [58:48<3:27:28, 13.21s/it]
+ 22%|██▏       | 259/1200 [59:02<3:27:22, 13.22s/it]
+                                                    
+
+ 22%|██▏       | 259/1200 [59:02<3:27:22, 13.22s/it]
+ 22%|██▏       | 260/1200 [59:15<3:27:03, 13.22s/it]
+                                                    
+
+ 22%|██▏       | 260/1200 [59:15<3:27:03, 13.22s/it]
+ 22%|██▏       | 261/1200 [59:28<3:27:02, 13.23s/it]
+                                                    
+
+ 22%|██▏       | 261/1200 [59:28<3:27:02, 13.23s/it]
+ 22%|██▏       | 262/1200 [59:41<3:26:18, 13.20s/it]
+                                                    
+
+ 22%|██▏       | 262/1200 [59:41<3:26:18, 13.20s/it]
+ 22%|██▏       | 263/1200 [59:55<3:26:23, 13.22s/it]
+                                                    
+
+ 22%|██▏       | 263/1200 [59:55<3:26:23, 13.22s/it]
+ 22%|██▏       | 264/1200 [1:00:08<3:27:09, 13.28s/it]
+                                                      
+
+ 22%|██▏       | 264/1200 [1:00:08<3:27:09, 13.28s/it]
+ 22%|██▏       | 265/1200 [1:00:25<3:44:28, 14.40s/it]
+                                                      
+
+ 22%|██▏       | 265/1200 [1:00:25<3:44:28, 14.40s/it]
+ 22%|██▏       | 266/1200 [1:00:38<3:39:18, 14.09s/it]
+                                                      
+
+ 22%|██▏       | 266/1200 [1:00:38<3:39:18, 14.09s/it]
+ 22%|██▏       | 267/1200 [1:00:52<3:35:39, 13.87s/it]
+                                                      
+
+ 22%|██▏       | 267/1200 [1:00:52<3:35:39, 13.87s/it]
+ 22%|██▏       | 268/1200 [1:01:05<3:32:53, 13.71s/it]
+                                                      
+
+ 22%|██▏       | 268/1200 [1:01:05<3:32:53, 13.71s/it]
+ 22%|██▏       | 269/1200 [1:01:18<3:30:41, 13.58s/it]
+                                                      
+
+ 22%|██▏       | 269/1200 [1:01:18<3:30:41, 13.58s/it]
+ 22%|██▎       | 270/1200 [1:01:32<3:28:53, 13.48s/it]
+                                                      
+
+ 22%|██▎       | 270/1200 [1:01:32<3:28:53, 13.48s/it]
+ 23%|██▎       | 271/1200 [1:01:45<3:28:08, 13.44s/it]
+                                                      
+
+ 23%|██▎       | 271/1200 [1:01:45<3:28:08, 13.44s/it]
+ 23%|██▎       | 272/1200 [1:01:58<3:27:32, 13.42s/it]
+                                                      
+
+ 23%|██▎       | 272/1200 [1:01:58<3:27:32, 13.42s/it]
+ 23%|██▎       | 273/1200 [1:02:12<3:26:47, 13.38s/it]
+                                                      
+
+ 23%|██▎       | 273/1200 [1:02:12<3:26:47, 13.38s/it]
+ 23%|██▎       | 274/1200 [1:02:25<3:26:01, 13.35s/it]
+                                                      
+
+ 23%|██▎       | 274/1200 [1:02:25<3:26:01, 13.35s/it]
+ 23%|██▎       | 275/1200 [1:02:38<3:26:48, 13.41s/it]
+                                                      
+
+ 23%|██▎       | 275/1200 [1:02:38<3:26:48, 13.41s/it]
+ 23%|██▎       | 276/1200 [1:02:52<3:26:21, 13.40s/it]
+                                                      
+
+ 23%|██▎       | 276/1200 [1:02:52<3:26:21, 13.40s/it]
+ 23%|██▎       | 277/1200 [1:03:05<3:25:40, 13.37s/it]
+                                                      
+
+ 23%|██▎       | 277/1200 [1:03:05<3:25:40, 13.37s/it]
+ 23%|██▎       | 278/1200 [1:03:18<3:25:29, 13.37s/it]
+                                                      
+
+ 23%|██▎       | 278/1200 [1:03:18<3:25:29, 13.37s/it]
+ 23%|██▎       | 279/1200 [1:03:32<3:24:30, 13.32s/it]
+                                                      
+
+ 23%|██▎       | 279/1200 [1:03:32<3:24:30, 13.32s/it]
+ 23%|██▎       | 280/1200 [1:03:45<3:23:39, 13.28s/it]
+                                                      
+
+ 23%|██▎       | 280/1200 [1:03:45<3:23:39, 13.28s/it]
+ 23%|██▎       | 281/1200 [1:03:58<3:22:59, 13.25s/it]
+                                                      
+
+ 23%|██▎       | 281/1200 [1:03:58<3:22:59, 13.25s/it]
+ 24%|██▎       | 282/1200 [1:04:11<3:22:18, 13.22s/it]
+                                                      
+
+ 24%|██▎       | 282/1200 [1:04:11<3:22:18, 13.22s/it]
+ 24%|██▎       | 283/1200 [1:04:24<3:21:59, 13.22s/it]
+                                                      
+
+ 24%|██▎       | 283/1200 [1:04:24<3:21:59, 13.22s/it]
+ 24%|██▎       | 284/1200 [1:04:38<3:21:48, 13.22s/it]
+                                                      
+
+ 24%|██▎       | 284/1200 [1:04:38<3:21:48, 13.22s/it]
+ 24%|██▍       | 285/1200 [1:04:51<3:22:15, 13.26s/it]
+                                                      
+
+ 24%|██▍       | 285/1200 [1:04:51<3:22:15, 13.26s/it]
+ 24%|██▍       | 286/1200 [1:05:04<3:21:48, 13.25s/it]
+                                                      
+
+ 24%|██▍       | 286/1200 [1:05:04<3:21:48, 13.25s/it]
+ 24%|██▍       | 287/1200 [1:05:17<3:21:32, 13.24s/it]
+                                                      
+
+ 24%|██▍       | 287/1200 [1:05:17<3:21:32, 13.24s/it]
+ 24%|██▍       | 288/1200 [1:05:31<3:21:22, 13.25s/it]
+                                                      
+
+ 24%|██▍       | 288/1200 [1:05:31<3:21:22, 13.25s/it]
+ 24%|██▍       | 289/1200 [1:05:48<3:37:47, 14.34s/it]
+                                                      
+
+ 24%|██▍       | 289/1200 [1:05:48<3:37:47, 14.34s/it]
+ 24%|██▍       | 290/1200 [1:06:01<3:33:53, 14.10s/it]
+                                                      
+
+ 24%|██▍       | 290/1200 [1:06:01<3:33:53, 14.10s/it]
+ 24%|██▍       | 291/1200 [1:06:14<3:30:10, 13.87s/it]
+                                                      
+
+ 24%|██▍       | 291/1200 [1:06:14<3:30:10, 13.87s/it]
+ 24%|██▍       | 292/1200 [1:06:28<3:26:56, 13.67s/it]
+                                                      
+
+ 24%|██▍       | 292/1200 [1:06:28<3:26:56, 13.67s/it]
+ 24%|██▍       | 293/1200 [1:06:41<3:24:49, 13.55s/it]
+                                                      
+
+ 24%|██▍       | 293/1200 [1:06:41<3:24:49, 13.55s/it]
+ 24%|██▍       | 294/1200 [1:06:54<3:23:22, 13.47s/it]
+                                                      
+
+ 24%|██▍       | 294/1200 [1:06:54<3:23:22, 13.47s/it]
+ 25%|██▍       | 295/1200 [1:07:07<3:22:18, 13.41s/it]
+                                                      
+
+ 25%|██▍       | 295/1200 [1:07:08<3:22:18, 13.41s/it]
+ 25%|██▍       | 296/1200 [1:07:21<3:21:43, 13.39s/it]
+                                                      
+
+ 25%|██▍       | 296/1200 [1:07:21<3:21:43, 13.39s/it]
+ 25%|██▍       | 297/1200 [1:07:34<3:20:55, 13.35s/it]
+                                                      
+
+ 25%|██▍       | 297/1200 [1:07:34<3:20:55, 13.35s/it]
+ 25%|██▍       | 298/1200 [1:07:47<3:20:11, 13.32s/it]
+                                                      
+
+ 25%|██▍       | 298/1200 [1:07:47<3:20:11, 13.32s/it]
+ 25%|██▍       | 299/1200 [1:08:01<3:20:03, 13.32s/it]
+                                                      
+
+ 25%|██▍       | 299/1200 [1:08:01<3:20:03, 13.32s/it]
+ 25%|██▌       | 300/1200 [1:08:14<3:19:43, 13.31s/it]
+                                                      
+
+ 25%|██▌       | 300/1200 [1:08:14<3:19:43, 13.31s/it]/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+ 25%|██▌       | 301/1200 [1:08:50<5:03:48, 20.28s/it]
+                                                      
+
+ 25%|██▌       | 301/1200 [1:08:50<5:03:48, 20.28s/it]
+ 25%|██▌       | 302/1200 [1:09:04<4:32:04, 18.18s/it]
+                                                      
+
+ 25%|██▌       | 302/1200 [1:09:04<4:32:04, 18.18s/it]
+ 25%|██▌       | 303/1200 [1:09:17<4:09:40, 16.70s/it]
+                                                      
+
+ 25%|██▌       | 303/1200 [1:09:17<4:09:40, 16.70s/it]
+ 25%|██▌       | 304/1200 [1:09:30<3:53:33, 15.64s/it]
+                                                      
+
+ 25%|██▌       | 304/1200 [1:09:30<3:53:33, 15.64s/it]
+ 25%|██▌       | 305/1200 [1:09:43<3:42:27, 14.91s/it]
+                                                      
+
+ 25%|██▌       | 305/1200 [1:09:43<3:42:27, 14.91s/it]
+ 26%|██▌       | 306/1200 [1:09:57<3:34:36, 14.40s/it]
+                                                      
+
+ 26%|██▌       | 306/1200 [1:09:57<3:34:36, 14.40s/it]
+ 26%|██▌       | 307/1200 [1:10:10<3:28:52, 14.03s/it]
+                                                      
+
+ 26%|██▌       | 307/1200 [1:10:10<3:28:52, 14.03s/it]
+ 26%|██▌       | 308/1200 [1:10:23<3:24:40, 13.77s/it]
+                                                      
+
+ 26%|██▌       | 308/1200 [1:10:23<3:24:40, 13.77s/it]
+ 26%|██▌       | 309/1200 [1:10:36<3:21:59, 13.60s/it]
+                                                      
+
+ 26%|██▌       | 309/1200 [1:10:36<3:21:59, 13.60s/it]
+ 26%|██▌       | 310/1200 [1:10:49<3:19:58, 13.48s/it]
+                                                      
+
+ 26%|██▌       | 310/1200 [1:10:49<3:19:58, 13.48s/it]
+ 26%|██▌       | 311/1200 [1:11:03<3:18:54, 13.42s/it]
+                                                      
+
+ 26%|██▌       | 311/1200 [1:11:03<3:18:54, 13.42s/it]
+ 26%|██▌       | 312/1200 [1:11:16<3:18:18, 13.40s/it]
+                                                      
+
+ 26%|██▌       | 312/1200 [1:11:16<3:18:18, 13.40s/it]
+ 26%|██▌       | 313/1200 [1:11:33<3:34:05, 14.48s/it]
+                                                      
+
+ 26%|██▌       | 313/1200 [1:11:33<3:34:05, 14.48s/it]
+ 26%|██▌       | 314/1200 [1:11:46<3:28:31, 14.12s/it]
+                                                      
+
+ 26%|██▌       | 314/1200 [1:11:46<3:28:31, 14.12s/it]
+ 26%|██▋       | 315/1200 [1:12:00<3:24:51, 13.89s/it]
+                                                      
+
+ 26%|██▋       | 315/1200 [1:12:00<3:24:51, 13.89s/it]
+ 26%|██▋       | 316/1200 [1:12:13<3:21:47, 13.70s/it]
+                                                      
+
+ 26%|██▋       | 316/1200 [1:12:13<3:21:47, 13.70s/it]
+ 26%|██▋       | 317/1200 [1:12:26<3:19:33, 13.56s/it]
+                                                      
+
+ 26%|██▋       | 317/1200 [1:12:26<3:19:33, 13.56s/it]
+ 26%|██▋       | 318/1200 [1:12:39<3:18:06, 13.48s/it]
+                                                      
+
+ 26%|██▋       | 318/1200 [1:12:39<3:18:06, 13.48s/it]
+ 27%|██▋       | 319/1200 [1:12:53<3:17:15, 13.43s/it]
+                                                      
+
+ 27%|██▋       | 319/1200 [1:12:53<3:17:15, 13.43s/it]
+ 27%|██▋       | 320/1200 [1:13:06<3:17:05, 13.44s/it]
+                                                      
+
+ 27%|██▋       | 320/1200 [1:13:06<3:17:05, 13.44s/it]
+ 27%|██▋       | 321/1200 [1:13:20<3:16:48, 13.43s/it]
+                                                      
+
+ 27%|██▋       | 321/1200 [1:13:20<3:16:48, 13.43s/it]
+ 27%|██▋       | 322/1200 [1:13:33<3:16:13, 13.41s/it]
+                                                      
+
+ 27%|██▋       | 322/1200 [1:13:33<3:16:13, 13.41s/it]
+ 27%|██▋       | 323/1200 [1:13:46<3:15:29, 13.37s/it]
+                                                      
+
+ 27%|██▋       | 323/1200 [1:13:46<3:15:29, 13.37s/it]
+ 27%|██▋       | 324/1200 [1:14:00<3:14:57, 13.35s/it]
+                                                      
+
+ 27%|██▋       | 324/1200 [1:14:00<3:14:57, 13.35s/it]
+ 27%|██▋       | 325/1200 [1:14:13<3:14:18, 13.32s/it]
+                                                      
+
+ 27%|██▋       | 325/1200 [1:14:13<3:14:18, 13.32s/it]
+ 27%|██▋       | 326/1200 [1:14:26<3:14:05, 13.32s/it]
+                                                      
+
+ 27%|██▋       | 326/1200 [1:14:26<3:14:05, 13.32s/it]
+ 27%|██▋       | 327/1200 [1:14:40<3:14:06, 13.34s/it]
+                                                      
+
+ 27%|██▋       | 327/1200 [1:14:40<3:14:06, 13.34s/it]
+ 27%|██▋       | 328/1200 [1:14:53<3:13:07, 13.29s/it]
+                                                      
+
+ 27%|██▋       | 328/1200 [1:14:53<3:13:07, 13.29s/it]
+ 27%|██▋       | 329/1200 [1:15:06<3:12:25, 13.26s/it]
+                                                      
+
+ 27%|██▋       | 329/1200 [1:15:06<3:12:25, 13.26s/it]
+ 28%|██▊       | 330/1200 [1:15:19<3:12:16, 13.26s/it]
+                                                      
+
+ 28%|██▊       | 330/1200 [1:15:19<3:12:16, 13.26s/it]
+ 28%|██▊       | 331/1200 [1:15:32<3:12:08, 13.27s/it]
+                                                      
+
+ 28%|██▊       | 331/1200 [1:15:32<3:12:08, 13.27s/it]
+ 28%|██▊       | 332/1200 [1:15:46<3:11:34, 13.24s/it]
+                                                      
+
+ 28%|██▊       | 332/1200 [1:15:46<3:11:34, 13.24s/it]
+ 28%|██▊       | 333/1200 [1:15:59<3:11:18, 13.24s/it]
+                                                      
+
+ 28%|██▊       | 333/1200 [1:15:59<3:11:18, 13.24s/it]
+ 28%|██▊       | 334/1200 [1:16:12<3:10:52, 13.22s/it]
+                                                      
+
+ 28%|██▊       | 334/1200 [1:16:12<3:10:52, 13.22s/it]
+ 28%|██▊       | 335/1200 [1:16:25<3:10:51, 13.24s/it]
+                                                      
+
+ 28%|██▊       | 335/1200 [1:16:25<3:10:51, 13.24s/it]
+ 28%|██▊       | 336/1200 [1:16:39<3:11:26, 13.29s/it]
+                                                      
+
+ 28%|██▊       | 336/1200 [1:16:39<3:11:26, 13.29s/it]
+ 28%|██▊       | 337/1200 [1:16:56<3:27:30, 14.43s/it]
+                                                      
+
+ 28%|██▊       | 337/1200 [1:16:56<3:27:30, 14.43s/it]
+ 28%|██▊       | 338/1200 [1:17:09<3:22:14, 14.08s/it]
+                                                      
+
+ 28%|██▊       | 338/1200 [1:17:09<3:22:14, 14.08s/it]
+ 28%|██▊       | 339/1200 [1:17:22<3:18:27, 13.83s/it]
+                                                      
+
+ 28%|██▊       | 339/1200 [1:17:22<3:18:27, 13.83s/it]
+ 28%|██▊       | 340/1200 [1:17:36<3:15:53, 13.67s/it]
+                                                      
+
+ 28%|██▊       | 340/1200 [1:17:36<3:15:53, 13.67s/it]
+ 28%|██▊       | 341/1200 [1:17:49<3:14:15, 13.57s/it]
+                                                      
+
+ 28%|██▊       | 341/1200 [1:17:49<3:14:15, 13.57s/it]
+ 28%|██▊       | 342/1200 [1:18:02<3:13:08, 13.51s/it]
+                                                      
+
+ 28%|██▊       | 342/1200 [1:18:02<3:13:08, 13.51s/it]
+ 29%|██▊       | 343/1200 [1:18:16<3:12:00, 13.44s/it]
+                                                      
+
+ 29%|██▊       | 343/1200 [1:18:16<3:12:00, 13.44s/it]
+ 29%|██▊       | 344/1200 [1:18:29<3:11:04, 13.39s/it]
+                                                      
+
+ 29%|██▊       | 344/1200 [1:18:29<3:11:04, 13.39s/it]
+ 29%|██▉       | 345/1200 [1:18:42<3:10:14, 13.35s/it]
+                                                      
+
+ 29%|██▉       | 345/1200 [1:18:42<3:10:14, 13.35s/it]
+ 29%|██▉       | 346/1200 [1:18:55<3:10:03, 13.35s/it]
+                                                      
+
+ 29%|██▉       | 346/1200 [1:18:55<3:10:03, 13.35s/it]
+ 29%|██▉       | 347/1200 [1:19:09<3:09:36, 13.34s/it]
+                                                      
+
+ 29%|██▉       | 347/1200 [1:19:09<3:09:36, 13.34s/it]
+ 29%|██▉       | 348/1200 [1:19:22<3:09:30, 13.35s/it]
+                                                      
+
+ 29%|██▉       | 348/1200 [1:19:22<3:09:30, 13.35s/it]
+ 29%|██▉       | 349/1200 [1:19:35<3:09:17, 13.35s/it]
+                                                      
+
+ 29%|██▉       | 349/1200 [1:19:35<3:09:17, 13.35s/it]
+ 29%|██▉       | 350/1200 [1:19:49<3:08:43, 13.32s/it]
+                                                      
+
+ 29%|██▉       | 350/1200 [1:19:49<3:08:43, 13.32s/it]
+ 29%|██▉       | 351/1200 [1:20:02<3:08:09, 13.30s/it]
+                                                      
+
+ 29%|██▉       | 351/1200 [1:20:02<3:08:09, 13.30s/it]
+ 29%|██▉       | 352/1200 [1:20:15<3:08:08, 13.31s/it]
+                                                      
+
+ 29%|██▉       | 352/1200 [1:20:15<3:08:08, 13.31s/it]
+ 29%|██▉       | 353/1200 [1:20:29<3:07:24, 13.28s/it]
+                                                      
+
+ 29%|██▉       | 353/1200 [1:20:29<3:07:24, 13.28s/it]
+ 30%|██▉       | 354/1200 [1:20:42<3:07:06, 13.27s/it]
+                                                      
+
+ 30%|██▉       | 354/1200 [1:20:42<3:07:06, 13.27s/it]
+ 30%|██▉       | 355/1200 [1:20:55<3:06:41, 13.26s/it]
+                                                      
+
+ 30%|██▉       | 355/1200 [1:20:55<3:06:41, 13.26s/it]
+ 30%|██▉       | 356/1200 [1:21:08<3:06:30, 13.26s/it]
+                                                      
+
+ 30%|██▉       | 356/1200 [1:21:08<3:06:30, 13.26s/it]
+ 30%|██▉       | 357/1200 [1:21:21<3:06:13, 13.25s/it]
+                                                      
+
+ 30%|██▉       | 357/1200 [1:21:22<3:06:13, 13.25s/it]
+ 30%|██▉       | 358/1200 [1:21:35<3:05:56, 13.25s/it]
+                                                      
+
+ 30%|██▉       | 358/1200 [1:21:35<3:05:56, 13.25s/it]
+ 30%|██▉       | 359/1200 [1:21:48<3:05:37, 13.24s/it]
+                                                      
+
+ 30%|██▉       | 359/1200 [1:21:48<3:05:37, 13.24s/it]
+ 30%|███       | 360/1200 [1:22:01<3:05:31, 13.25s/it]
+                                                      
+
+ 30%|███       | 360/1200 [1:22:01<3:05:31, 13.25s/it]
+ 30%|███       | 361/1200 [1:22:18<3:21:42, 14.43s/it]
+                                                      
+
+ 30%|███       | 361/1200 [1:22:18<3:21:42, 14.43s/it]
+ 30%|███       | 362/1200 [1:22:32<3:16:45, 14.09s/it]
+                                                      
+
+ 30%|███       | 362/1200 [1:22:32<3:16:45, 14.09s/it]
+ 30%|███       | 363/1200 [1:22:45<3:13:33, 13.88s/it]
+                                                      
+
+ 30%|███       | 363/1200 [1:22:45<3:13:33, 13.88s/it]
+ 30%|███       | 364/1200 [1:22:58<3:10:45, 13.69s/it]
+                                                      
+
+ 30%|███       | 364/1200 [1:22:58<3:10:45, 13.69s/it]
+ 30%|███       | 365/1200 [1:23:12<3:09:06, 13.59s/it]
+                                                      
+
+ 30%|███       | 365/1200 [1:23:12<3:09:06, 13.59s/it]
+ 30%|███       | 366/1200 [1:23:25<3:08:21, 13.55s/it]
+                                                      
+
+ 30%|███       | 366/1200 [1:23:25<3:08:21, 13.55s/it]
+ 31%|███       | 367/1200 [1:23:38<3:07:10, 13.48s/it]
+                                                      
+
+ 31%|███       | 367/1200 [1:23:38<3:07:10, 13.48s/it]
+ 31%|███       | 368/1200 [1:23:52<3:05:57, 13.41s/it]
+                                                      
+
+ 31%|███       | 368/1200 [1:23:52<3:05:57, 13.41s/it]
+ 31%|███       | 369/1200 [1:24:05<3:05:20, 13.38s/it]
+                                                      
+
+ 31%|███       | 369/1200 [1:24:05<3:05:20, 13.38s/it]
+ 31%|███       | 370/1200 [1:24:18<3:04:51, 13.36s/it]
+                                                      
+
+ 31%|███       | 370/1200 [1:24:18<3:04:51, 13.36s/it]
+ 31%|███       | 371/1200 [1:24:32<3:04:32, 13.36s/it]
+                                                      
+
+ 31%|███       | 371/1200 [1:24:32<3:04:32, 13.36s/it]
+ 31%|███       | 372/1200 [1:24:45<3:03:55, 13.33s/it]
+                                                      
+
+ 31%|███       | 372/1200 [1:24:45<3:03:55, 13.33s/it]
+ 31%|███       | 373/1200 [1:24:58<3:03:35, 13.32s/it]
+                                                      
+
+ 31%|███       | 373/1200 [1:24:58<3:03:35, 13.32s/it]
+ 31%|███       | 374/1200 [1:25:12<3:03:14, 13.31s/it]
+                                                      
+
+ 31%|███       | 374/1200 [1:25:12<3:03:14, 13.31s/it]
+ 31%|███▏      | 375/1200 [1:25:25<3:02:59, 13.31s/it]
+                                                      
+
+ 31%|███▏      | 375/1200 [1:25:25<3:02:59, 13.31s/it]
+ 31%|███▏      | 376/1200 [1:25:38<3:02:36, 13.30s/it]
+                                                      
+
+ 31%|███▏      | 376/1200 [1:25:38<3:02:36, 13.30s/it]
+ 31%|███▏      | 377/1200 [1:25:51<3:02:20, 13.29s/it]
+                                                      
+
+ 31%|███▏      | 377/1200 [1:25:51<3:02:20, 13.29s/it]
+ 32%|███▏      | 378/1200 [1:26:05<3:01:48, 13.27s/it]
+                                                      
+
+ 32%|███▏      | 378/1200 [1:26:05<3:01:48, 13.27s/it]
+ 32%|███▏      | 379/1200 [1:26:18<3:01:09, 13.24s/it]
+                                                      
+
+ 32%|███▏      | 379/1200 [1:26:18<3:01:09, 13.24s/it]
+ 32%|███▏      | 380/1200 [1:26:31<3:00:50, 13.23s/it]
+                                                      
+
+ 32%|███▏      | 380/1200 [1:26:31<3:00:50, 13.23s/it]
+ 32%|███▏      | 381/1200 [1:26:44<3:00:28, 13.22s/it]
+                                                      
+
+ 32%|███▏      | 381/1200 [1:26:44<3:00:28, 13.22s/it]
+ 32%|███▏      | 382/1200 [1:26:57<3:00:01, 13.21s/it]
+                                                      
+
+ 32%|███▏      | 382/1200 [1:26:57<3:00:01, 13.21s/it]
+ 32%|███▏      | 383/1200 [1:27:11<2:59:32, 13.19s/it]
+                                                      
+
+ 32%|███▏      | 383/1200 [1:27:11<2:59:32, 13.19s/it]
+ 32%|███▏      | 384/1200 [1:27:24<3:00:12, 13.25s/it]
+                                                      
+
+ 32%|███▏      | 384/1200 [1:27:24<3:00:12, 13.25s/it]
+ 32%|███▏      | 385/1200 [1:27:41<3:14:45, 14.34s/it]
+                                                      
+
+ 32%|███▏      | 385/1200 [1:27:41<3:14:45, 14.34s/it]
+ 32%|███▏      | 386/1200 [1:27:54<3:10:24, 14.03s/it]
+                                                      
+
+ 32%|███▏      | 386/1200 [1:27:54<3:10:24, 14.03s/it]
+ 32%|███▏      | 387/1200 [1:28:07<3:06:54, 13.79s/it]
+                                                      
+
+ 32%|███▏      | 387/1200 [1:28:07<3:06:54, 13.79s/it]
+ 32%|███▏      | 388/1200 [1:28:21<3:04:52, 13.66s/it]
+                                                      
+
+ 32%|███▏      | 388/1200 [1:28:21<3:04:52, 13.66s/it]
+ 32%|███▏      | 389/1200 [1:28:34<3:02:44, 13.52s/it]
+                                                      
+
+ 32%|███▏      | 389/1200 [1:28:34<3:02:44, 13.52s/it]
+ 32%|███▎      | 390/1200 [1:28:47<3:01:40, 13.46s/it]
+                                                      
+
+ 32%|███▎      | 390/1200 [1:28:47<3:01:40, 13.46s/it]
+ 33%|███▎      | 391/1200 [1:29:01<3:01:05, 13.43s/it]
+                                                      
+
+ 33%|███▎      | 391/1200 [1:29:01<3:01:05, 13.43s/it]
+ 33%|███▎      | 392/1200 [1:29:14<3:00:04, 13.37s/it]
+                                                      
+
+ 33%|███▎      | 392/1200 [1:29:14<3:00:04, 13.37s/it]
+ 33%|███▎      | 393/1200 [1:29:27<2:59:40, 13.36s/it]
+                                                      
+
+ 33%|███▎      | 393/1200 [1:29:27<2:59:40, 13.36s/it]
+ 33%|███▎      | 394/1200 [1:29:40<2:59:13, 13.34s/it]
+                                                      
+
+ 33%|███▎      | 394/1200 [1:29:40<2:59:13, 13.34s/it]
+ 33%|███▎      | 395/1200 [1:29:54<2:58:51, 13.33s/it]
+                                                      
+
+ 33%|███▎      | 395/1200 [1:29:54<2:58:51, 13.33s/it]
+ 33%|███▎      | 396/1200 [1:30:07<2:58:51, 13.35s/it]
+                                                      
+
+ 33%|███▎      | 396/1200 [1:30:07<2:58:51, 13.35s/it]
+ 33%|███▎      | 397/1200 [1:30:20<2:58:24, 13.33s/it]
+                                                      
+
+ 33%|███▎      | 397/1200 [1:30:20<2:58:24, 13.33s/it]
+ 33%|███▎      | 398/1200 [1:30:34<2:57:51, 13.31s/it]
+                                                      
+
+ 33%|███▎      | 398/1200 [1:30:34<2:57:51, 13.31s/it]
+ 33%|███▎      | 399/1200 [1:30:47<2:57:44, 13.31s/it]
+                                                      
+
+ 33%|███▎      | 399/1200 [1:30:47<2:57:44, 13.31s/it]
+ 33%|███▎      | 400/1200 [1:31:00<2:56:56, 13.27s/it]
+                                                      
+
+ 33%|███▎      | 400/1200 [1:31:00<2:56:56, 13.27s/it]/home/zl986/miniconda3/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:745: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/zl986/miniconda3/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+ 33%|███▎      | 401/1200 [1:31:37<4:30:05, 20.28s/it]
+                                                      
+
+ 33%|███▎      | 401/1200 [1:31:37<4:30:05, 20.28s/it]
+ 34%|███▎      | 402/1200 [1:31:50<4:01:25, 18.15s/it]
+                                                      
+
+ 34%|███▎      | 402/1200 [1:31:50<4:01:25, 18.15s/it]
+ 34%|███▎      | 403/1200 [1:32:03<3:41:28, 16.67s/it]
+                                                      
+
+ 34%|███▎      | 403/1200 [1:32:03<3:41:28, 16.67s/it]
+ 34%|███▎      | 404/1200 [1:32:16<3:27:28, 15.64s/it]
+                                                      
+
+ 34%|███▎      | 404/1200 [1:32:16<3:27:28, 15.64s/it]
+ 34%|███▍      | 405/1200 [1:32:30<3:19:20, 15.04s/it]
+                                                      
+
+ 34%|███▍      | 405/1200 [1:32:30<3:19:20, 15.04s/it]
+ 34%|███▍      | 406/1200 [1:32:43<3:11:48, 14.49s/it]
+                                                      
+
+ 34%|███▍      | 406/1200 [1:32:43<3:11:48, 14.49s/it]
+ 34%|███▍      | 407/1200 [1:32:57<3:06:32, 14.11s/it]
+                                                      
+
+ 34%|███▍      | 407/1200 [1:32:57<3:06:32, 14.11s/it]
+ 34%|███▍      | 408/1200 [1:33:10<3:03:20, 13.89s/it]
+                                                      
+
+ 34%|███▍      | 408/1200 [1:33:10<3:03:20, 13.89s/it]
+ 34%|███▍      | 409/1200 [1:33:27<3:16:13, 14.88s/it]
+                                                      
+
+ 34%|███▍      | 409/1200 [1:33:27<3:16:13, 14.88s/it]
+ 34%|███▍      | 410/1200 [1:33:40<3:09:13, 14.37s/it]
+                                                      
+
+ 34%|███▍      | 410/1200 [1:33:40<3:09:13, 14.37s/it]
+ 34%|███▍      | 411/1200 [1:33:54<3:04:51, 14.06s/it]
+                                                      
+
+ 34%|███▍      | 411/1200 [1:33:54<3:04:51, 14.06s/it]
+ 34%|███▍      | 412/1200 [1:34:07<3:01:34, 13.83s/it]
+                                                      
+
+ 34%|███▍      | 412/1200 [1:34:07<3:01:34, 13.83s/it]
+ 34%|███▍      | 413/1200 [1:34:20<2:59:13, 13.66s/it]
+                                                      
+
+ 34%|███▍      | 413/1200 [1:34:20<2:59:13, 13.66s/it]
+ 34%|███▍      | 414/1200 [1:34:33<2:57:16, 13.53s/it]
+                                                      
+
+ 34%|███▍      | 414/1200 [1:34:33<2:57:16, 13.53s/it]
+ 35%|███▍      | 415/1200 [1:34:47<2:56:20, 13.48s/it]
+                                                      
+
+ 35%|███▍      | 415/1200 [1:34:47<2:56:20, 13.48s/it]
+ 35%|███▍      | 416/1200 [1:35:00<2:55:28, 13.43s/it]
+                                                      
+
+ 35%|███▍      | 416/1200 [1:35:00<2:55:28, 13.43s/it]
+ 35%|███▍      | 417/1200 [1:35:13<2:54:33, 13.38s/it]
+                                                      
+
+ 35%|███▍      | 417/1200 [1:35:13<2:54:33, 13.38s/it]
+ 35%|███▍      | 418/1200 [1:35:27<2:54:00, 13.35s/it]
+                                                      
+
+ 35%|███▍      | 418/1200 [1:35:27<2:54:00, 13.35s/it]
+ 35%|███▍      | 419/1200 [1:35:40<2:53:24, 13.32s/it]
+                                                      
+
+ 35%|███▍      | 419/1200 [1:35:40<2:53:24, 13.32s/it]
+ 35%|███▌      | 420/1200 [1:35:53<2:53:07, 13.32s/it]
+                                                      
+
+ 35%|███▌      | 420/1200 [1:35:53<2:53:07, 13.32s/it]
+ 35%|███▌      | 421/1200 [1:36:06<2:52:53, 13.32s/it]
+                                                      
+
+ 35%|███▌      | 421/1200 [1:36:06<2:52:53, 13.32s/it]
+ 35%|███▌      | 422/1200 [1:36:20<2:52:50, 13.33s/it]
+                                                      
+
+ 35%|███▌      | 422/1200 [1:36:20<2:52:50, 13.33s/it]
+ 35%|███▌      | 423/1200 [1:36:33<2:53:06, 13.37s/it]
+                                                      
+
+ 35%|███▌      | 423/1200 [1:36:33<2:53:06, 13.37s/it]
+ 35%|███▌      | 424/1200 [1:36:47<2:52:25, 13.33s/it]
+                                                      
+
+ 35%|███▌      | 424/1200 [1:36:47<2:52:25, 13.33s/it]
+ 35%|███▌      | 425/1200 [1:37:00<2:51:53, 13.31s/it]
+                                                      
+
+ 35%|███▌      | 425/1200 [1:37:00<2:51:53, 13.31s/it]
+ 36%|███▌      | 426/1200 [1:37:13<2:51:34, 13.30s/it]
+                                                      
+
+ 36%|███▌      | 426/1200 [1:37:13<2:51:34, 13.30s/it]
+ 36%|███▌      | 427/1200 [1:37:26<2:51:19, 13.30s/it]
+                                                      
+
+ 36%|███▌      | 427/1200 [1:37:26<2:51:19, 13.30s/it]
+ 36%|███▌      | 428/1200 [1:37:40<2:50:50, 13.28s/it]
+                                                      
+
+ 36%|███▌      | 428/1200 [1:37:40<2:50:50, 13.28s/it]
+ 36%|███▌      | 429/1200 [1:37:53<2:50:40, 13.28s/it]
+                                                      
+
+ 36%|███▌      | 429/1200 [1:37:53<2:50:40, 13.28s/it]
+ 36%|███▌      | 430/1200 [1:38:06<2:51:05, 13.33s/it]
+                                                      
+
+ 36%|███▌      | 430/1200 [1:38:06<2:51:05, 13.33s/it]
+ 36%|███▌      | 431/1200 [1:38:20<2:50:29, 13.30s/it]
+                                                      
+
+ 36%|███▌      | 431/1200 [1:38:20<2:50:29, 13.30s/it]
+ 36%|███▌      | 432/1200 [1:38:33<2:50:36, 13.33s/it]
+                                                      
+
+ 36%|███▌      | 432/1200 [1:38:33<2:50:36, 13.33s/it]
+ 36%|███▌      | 433/1200 [1:38:50<3:04:26, 14.43s/it]
+                                                      
+
+ 36%|███▌      | 433/1200 [1:38:50<3:04:26, 14.43s/it]
+ 36%|███▌      | 434/1200 [1:39:03<3:00:06, 14.11s/it]
+                                                      
+
+ 36%|███▌      | 434/1200 [1:39:03<3:00:06, 14.11s/it]
+ 36%|███▋      | 435/1200 [1:39:17<2:56:53, 13.87s/it]
+                                                      
+
+ 36%|███▋      | 435/1200 [1:39:17<2:56:53, 13.87s/it]
+ 36%|███▋      | 436/1200 [1:39:30<2:54:21, 13.69s/it]
+                                                      
+
+ 36%|███▋      | 436/1200 [1:39:30<2:54:21, 13.69s/it]
+ 36%|███▋      | 437/1200 [1:39:43<2:52:39, 13.58s/it]
+                                                      
+
+ 36%|███▋      | 437/1200 [1:39:43<2:52:39, 13.58s/it]
+ 36%|███▋      | 438/1200 [1:39:57<2:51:34, 13.51s/it]
+                                                      
+
+ 36%|███▋      | 438/1200 [1:39:57<2:51:34, 13.51s/it]
+ 37%|███▋      | 439/1200 [1:40:10<2:50:25, 13.44s/it]
+                                                      
+
+ 37%|███▋      | 439/1200 [1:40:10<2:50:25, 13.44s/it]
+ 37%|███▋      | 440/1200 [1:40:23<2:49:50, 13.41s/it]
+                                                      
+
+ 37%|███▋      | 440/1200 [1:40:23<2:49:50, 13.41s/it]
+ 37%|███▋      | 441/1200 [1:40:36<2:48:53, 13.35s/it]
+                                                      
+
+ 37%|███▋      | 441/1200 [1:40:36<2:48:53, 13.35s/it]
+ 37%|███▋      | 442/1200 [1:40:50<2:49:14, 13.40s/it]
+                                                      
+
+ 37%|███▋      | 442/1200 [1:40:50<2:49:14, 13.40s/it]
+ 37%|███▋      | 443/1200 [1:41:03<2:49:16, 13.42s/it]
+                                                      
+
+ 37%|███▋      | 443/1200 [1:41:03<2:49:16, 13.42s/it]
+ 37%|███▋      | 444/1200 [1:41:17<2:48:36, 13.38s/it]
+                                                      
+
+ 37%|███▋      | 444/1200 [1:41:17<2:48:36, 13.38s/it]
+ 37%|███▋      | 445/1200 [1:41:30<2:48:00, 13.35s/it]
+                                                      
+
+ 37%|███▋      | 445/1200 [1:41:30<2:48:00, 13.35s/it]
+ 37%|███▋      | 446/1200 [1:41:43<2:47:07, 13.30s/it]
+                                                      
+
+ 37%|███▋      | 446/1200 [1:41:43<2:47:07, 13.30s/it]
+ 37%|███▋      | 447/1200 [1:41:56<2:47:06, 13.32s/it]
+                                                      
+
+ 37%|███▋      | 447/1200 [1:41:56<2:47:06, 13.32s/it]
+ 37%|███▋      | 448/1200 [1:42:10<2:46:48, 13.31s/it]
+                                                      
+
+ 37%|███▋      | 448/1200 [1:42:10<2:46:48, 13.31s/it]
+ 37%|███▋      | 449/1200 [1:42:23<2:46:31, 13.30s/it]
+                                                      
+
+ 37%|███▋      | 449/1200 [1:42:23<2:46:31, 13.30s/it]
+ 38%|███▊      | 450/1200 [1:42:36<2:46:01, 13.28s/it]
+                                                      
+
+ 38%|███▊      | 450/1200 [1:42:36<2:46:01, 13.28s/it]
+ 38%|███▊      | 451/1200 [1:42:50<2:46:05, 13.31s/it]
+                                                      
+
+ 38%|███▊      | 451/1200 [1:42:50<2:46:05, 13.31s/it]
+ 38%|███▊      | 452/1200 [1:43:03<2:45:42, 13.29s/it]
+                                                      
+
+ 38%|███▊      | 452/1200 [1:43:03<2:45:42, 13.29s/it]
+ 38%|███▊      | 453/1200 [1:43:16<2:45:01, 13.26s/it]
+                                                      
+
+ 38%|███▊      | 453/1200 [1:43:16<2:45:01, 13.26s/it]
+ 38%|███▊      | 454/1200 [1:43:29<2:44:41, 13.25s/it]
+                                                      
+
+ 38%|███▊      | 454/1200 [1:43:29<2:44:41, 13.25s/it]
+ 38%|███▊      | 455/1200 [1:43:42<2:44:08, 13.22s/it]
+                                                      
+
+ 38%|███▊      | 455/1200 [1:43:42<2:44:08, 13.22s/it]
+ 38%|███▊      | 456/1200 [1:43:56<2:44:34, 13.27s/it]
+                                                      
+
+ 38%|███▊      | 456/1200 [1:43:56<2:44:34, 13.27s/it]
+ 38%|███▊      | 457/1200 [1:44:13<2:57:41, 14.35s/it]
+                                                      
+
+ 38%|███▊      | 457/1200 [1:44:13<2:57:41, 14.35s/it]
+ 38%|███▊      | 458/1200 [1:44:26<2:53:46, 14.05s/it]
+                                                      
+
+ 38%|███▊      | 458/1200 [1:44:26<2:53:46, 14.05s/it]
+ 38%|███▊      | 459/1200 [1:44:39<2:51:00, 13.85s/it]
+                                                      
+
+ 38%|███▊      | 459/1200 [1:44:39<2:51:00, 13.85s/it]
+ 38%|███▊      | 460/1200 [1:44:53<2:49:01, 13.70s/it]
+                                                      
+
+ 38%|███▊      | 460/1200 [1:44:53<2:49:01, 13.70s/it]
+ 38%|███▊      | 461/1200 [1:45:06<2:47:30, 13.60s/it]
+                                                      
+
+ 38%|███▊      | 461/1200 [1:45:06<2:47:30, 13.60s/it]
+ 38%|███▊      | 462/1200 [1:45:19<2:46:10, 13.51s/it]
+                                                      
+
+ 38%|███▊      | 462/1200 [1:45:19<2:46:10, 13.51s/it]
+ 39%|███▊      | 463/1200 [1:45:33<2:44:50, 13.42s/it]
+                                                      
+
+ 39%|███▊      | 463/1200 [1:45:33<2:44:50, 13.42s/it]
+ 39%|███▊      | 464/1200 [1:45:46<2:44:08, 13.38s/it]
+                                                      
+
+ 39%|███▊      | 464/1200 [1:45:46<2:44:08, 13.38s/it]
+ 39%|███▉      | 465/1200 [1:45:59<2:43:14, 13.33s/it]
+                                                      
+
+ 39%|███▉      | 465/1200 [1:45:59<2:43:14, 13.33s/it]
+ 39%|███▉      | 466/1200 [1:46:12<2:42:52, 13.31s/it]
+                                                      
+
+ 39%|███▉      | 466/1200 [1:46:12<2:42:52, 13.31s/it]
+ 39%|███▉      | 467/1200 [1:46:26<2:42:37, 13.31s/it]
+                                                      
+
+ 39%|███▉      | 467/1200 [1:46:26<2:42:37, 13.31s/it]
+ 39%|███▉      | 468/1200 [1:46:39<2:42:33, 13.32s/it]
+                                                      
+
+ 39%|███▉      | 468/1200 [1:46:39<2:42:33, 13.32s/it]
+ 39%|███▉      | 469/1200 [1:46:52<2:41:54, 13.29s/it]
+                                                      
+
+ 39%|███▉      | 469/1200 [1:46:52<2:41:54, 13.29s/it]
+ 39%|███▉      | 470/1200 [1:47:06<2:41:44, 13.29s/it]
+                                                      
+
+ 39%|███▉      | 470/1200 [1:47:06<2:41:44, 13.29s/it]
+ 39%|███▉      | 471/1200 [1:47:19<2:41:47, 13.32s/it]
+                                                      
+
+ 39%|███▉      | 471/1200 [1:47:19<2:41:47, 13.32s/it]
+ 39%|███▉      | 472/1200 [1:47:32<2:41:25, 13.30s/it]
+                                                      
+
+ 39%|███▉      | 472/1200 [1:47:32<2:41:25, 13.30s/it]
+ 39%|███▉      | 473/1200 [1:47:45<2:40:35, 13.25s/it]
+                                                      
+
+ 39%|███▉      | 473/1200 [1:47:45<2:40:35, 13.25s/it]
+ 40%|███▉      | 474/1200 [1:47:59<2:40:11, 13.24s/it]
+                                                      
+
+ 40%|███▉      | 474/1200 [1:47:59<2:40:11, 13.24s/it]
+ 40%|███▉      | 475/1200 [1:48:12<2:40:23, 13.27s/it]
+                                                      
+
+ 40%|███▉      | 475/1200 [1:48:12<2:40:23, 13.27s/it]
+ 40%|███▉      | 476/1200 [1:48:25<2:40:00, 13.26s/it]
+                                                      
+
+ 40%|███▉      | 476/1200 [1:48:25<2:40:00, 13.26s/it]
+ 40%|███▉      | 477/1200 [1:48:38<2:39:50, 13.26s/it]
+                                                      
+
+ 40%|███▉      | 477/1200 [1:48:38<2:39:50, 13.26s/it]
+ 40%|███▉      | 478/1200 [1:48:52<2:39:14, 13.23s/it]
+                                                      
+
+ 40%|███▉      | 478/1200 [1:48:52<2:39:14, 13.23s/it]
+ 40%|███▉      | 479/1200 [1:49:05<2:38:45, 13.21s/it]
+                                                      
+
+ 40%|███▉      | 479/1200 [1:49:05<2:38:45, 13.21s/it]
+ 40%|████      | 480/1200 [1:49:18<2:38:54, 13.24s/it]
+                                                      
+
+ 40%|████      | 480/1200 [1:49:18<2:38:54, 13.24s/it]
+ 40%|████      | 481/1200 [1:49:35<2:52:32, 14.40s/it]
+                                                      
+
+ 40%|████      | 481/1200 [1:49:35<2:52:32, 14.40s/it]
+ 40%|████      | 482/1200 [1:49:49<2:48:17, 14.06s/it]
+                                                      
+
+ 40%|████      | 482/1200 [1:49:49<2:48:17, 14.06s/it]
+ 40%|████      | 483/1200 [1:50:02<2:45:13, 13.83s/it]
+                                                      
+
+ 40%|████      | 483/1200 [1:50:02<2:45:13, 13.83s/it]
+ 40%|████      | 484/1200 [1:50:15<2:43:07, 13.67s/it]
+                                                      
+
+ 40%|████      | 484/1200 [1:50:15<2:43:07, 13.67s/it]
+ 40%|████      | 485/1200 [1:50:28<2:41:39, 13.57s/it]
+                                                      
+
+ 40%|████      | 485/1200 [1:50:28<2:41:39, 13.57s/it]
+ 40%|████      | 486/1200 [1:50:42<2:40:40, 13.50s/it]
+                                                      
+
+ 40%|████      | 486/1200 [1:50:42<2:40:40, 13.50s/it]
+ 41%|████      | 487/1200 [1:50:55<2:39:47, 13.45s/it]
+                                                      
+
+ 41%|████      | 487/1200 [1:50:55<2:39:47, 13.45s/it]
+ 41%|████      | 488/1200 [1:51:08<2:38:47, 13.38s/it]
+                                                      
+
+ 41%|████      | 488/1200 [1:51:08<2:38:47, 13.38s/it]
+ 41%|████      | 489/1200 [1:51:22<2:38:13, 13.35s/it]
+                                                      
+
+ 41%|████      | 489/1200 [1:51:22<2:38:13, 13.35s/it]
+ 41%|████      | 490/1200 [1:51:35<2:37:48, 13.34s/it]
+                                                      
+
+ 41%|████      | 490/1200 [1:51:35<2:37:48, 13.34s/it]
+ 41%|████      | 491/1200 [1:51:48<2:37:36, 13.34s/it]
+                                                      
+
+ 41%|████      | 491/1200 [1:51:48<2:37:36, 13.34s/it]
+ 41%|████      | 492/1200 [1:52:02<2:37:18, 13.33s/it]
+                                                      
+
+ 41%|████      | 492/1200 [1:52:02<2:37:18, 13.33s/it]
+ 41%|████      | 493/1200 [1:52:15<2:37:08, 13.34s/it]
+                                                      
+
+ 41%|████      | 493/1200 [1:52:15<2:37:08, 13.34s/it]
+ 41%|████      | 494/1200 [1:52:28<2:37:10, 13.36s/it]
+                                                      
+
+ 41%|████      | 494/1200 [1:52:28<2:37:10, 13.36s/it]
+ 41%|████▏     | 495/1200 [1:52:42<2:36:37, 13.33s/it]
+                                                      
+
+ 41%|████▏     | 495/1200 [1:52:42<2:36:37, 13.33s/it]
+ 41%|████▏     | 496/1200 [1:52:55<2:36:04, 13.30s/it]
+                                                      
+
+ 41%|████▏     | 496/1200 [1:52:55<2:36:04, 13.30s/it]
+ 41%|████▏     | 497/1200 [1:53:08<2:35:46, 13.30s/it]
+                                                      
+
+ 41%|████▏     | 497/1200 [1:53:08<2:35:46, 13.30s/it]
+ 42%|████▏     | 498/1200 [1:53:21<2:35:17, 13.27s/it]
+                                                      
+
+ 42%|████▏     | 498/1200 [1:53:21<2:35:17, 13.27s/it]
+ 42%|████▏     | 499/1200 [1:53:35<2:34:49, 13.25s/it]
+                                                      
+
+ 42%|████▏     | 499/1200 [1:53:35<2:34:49, 13.25s/it]
+ 42%|████▏     | 500/1200 [1:53:48<2:34:15, 13.22s/it]
+                                                      
+
+ 42%|████▏     | 500/1200 [1:53:48<2:34:15, 13.22s/it]Traceback (most recent call last):
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 944, in save
+    _save(
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 1216, in _save
+    zip_file.write_record(name, storage, num_bytes)
+RuntimeError: [enforce fail at inline_container.cc:815] . PytorchStreamWriter failed writing file data/2: file write failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zl986/backdoor-test/LLaVA/llava/train/train_mem.py", line 4, in <module>
+    train(attn_implementation="flash_attention_2")
+  File "/home/zl986/backdoor-test/LLaVA/llava/train/train.py", line 969, in train
+    trainer.train()
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1929, in _inner_training_loop
+    self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2302, in _maybe_log_save_evaluate
+    self._save_checkpoint(model, trial, metrics=metrics)
+  File "/home/zl986/backdoor-test/LLaVA/llava/train/llava_trainer.py", line 249, in _save_checkpoint
+    super(LLaVATrainer, self)._save_checkpoint(model, trial, metrics)
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2382, in _save_checkpoint
+    self._save_optimizer_and_scheduler(staging_output_dir)
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2488, in _save_optimizer_and_scheduler
+    self.model_wrapped.save_checkpoint(output_dir, exclude_frozen_parameters=True)
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3279, in save_checkpoint
+    self._save_zero_checkpoint(save_dir, tag)
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3640, in _save_zero_checkpoint
+    self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
+    torch.save(state_dict, path)
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 943, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 784, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:626] . unexpected pos 170401152 vs 170401040
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 944, in save
+[rank2]:     _save(
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 1216, in _save
+[rank2]:     zip_file.write_record(name, storage, num_bytes)
+[rank2]: RuntimeError: [enforce fail at inline_container.cc:815] . PytorchStreamWriter failed writing file data/1: file write failed
+
+[rank2]: During handling of the above exception, another exception occurred:
+
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train_mem.py", line 4, in <module>
+[rank2]:     train(attn_implementation="flash_attention_2")
+[rank2]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train.py", line 969, in train
+[rank2]:     trainer.train()
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1539, in train
+[rank2]:     return inner_training_loop(
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1929, in _inner_training_loop
+[rank2]:     self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2302, in _maybe_log_save_evaluate
+[rank2]:     self._save_checkpoint(model, trial, metrics=metrics)
+[rank2]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/llava_trainer.py", line 249, in _save_checkpoint
+[rank2]:     super(LLaVATrainer, self)._save_checkpoint(model, trial, metrics)
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2382, in _save_checkpoint
+[rank2]:     self._save_optimizer_and_scheduler(staging_output_dir)
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2488, in _save_optimizer_and_scheduler
+[rank2]:     self.model_wrapped.save_checkpoint(output_dir, exclude_frozen_parameters=True)
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3279, in save_checkpoint
+[rank2]:     self._save_zero_checkpoint(save_dir, tag)
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3640, in _save_zero_checkpoint
+[rank2]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
+[rank2]:     torch.save(state_dict, path)
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 943, in save
+[rank2]:     with _open_zipfile_writer(f) as opened_zipfile:
+[rank2]:          ^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 784, in __exit__
+[rank2]:     self.file_like.write_end_of_file()
+[rank2]: RuntimeError: [enforce fail at inline_container.cc:626] . unexpected pos 3072 vs 2964
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 944, in save
+[rank3]:     _save(
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 1216, in _save
+[rank3]:     zip_file.write_record(name, storage, num_bytes)
+[rank3]: RuntimeError: [enforce fail at inline_container.cc:815] . PytorchStreamWriter failed writing file data/1: file write failed
+
+[rank3]: During handling of the above exception, another exception occurred:
+
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train_mem.py", line 4, in <module>
+[rank3]:     train(attn_implementation="flash_attention_2")
+[rank3]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train.py", line 969, in train
+[rank3]:     trainer.train()
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1539, in train
+[rank3]:     return inner_training_loop(
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1929, in _inner_training_loop
+[rank3]:     self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2302, in _maybe_log_save_evaluate
+[rank3]:     self._save_checkpoint(model, trial, metrics=metrics)
+[rank3]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/llava_trainer.py", line 249, in _save_checkpoint
+[rank3]:     super(LLaVATrainer, self)._save_checkpoint(model, trial, metrics)
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2382, in _save_checkpoint
+[rank3]:     self._save_optimizer_and_scheduler(staging_output_dir)
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2488, in _save_optimizer_and_scheduler
+[rank3]:     self.model_wrapped.save_checkpoint(output_dir, exclude_frozen_parameters=True)
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3279, in save_checkpoint
+[rank3]:     self._save_zero_checkpoint(save_dir, tag)
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3640, in _save_zero_checkpoint
+[rank3]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
+[rank3]:     torch.save(state_dict, path)
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 943, in save
+[rank3]:     with _open_zipfile_writer(f) as opened_zipfile:
+[rank3]:          ^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 784, in __exit__
+[rank3]:     self.file_like.write_end_of_file()
+[rank3]: RuntimeError: [enforce fail at inline_container.cc:626] . unexpected pos 3072 vs 2964
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 944, in save
+[rank4]:     _save(
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 1216, in _save
+[rank4]:     zip_file.write_record(name, storage, num_bytes)
+[rank4]: RuntimeError: [enforce fail at inline_container.cc:815] . PytorchStreamWriter failed writing file data/1: file write failed
+
+[rank4]: During handling of the above exception, another exception occurred:
+
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train_mem.py", line 4, in <module>
+[rank4]:     train(attn_implementation="flash_attention_2")
+[rank4]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train.py", line 969, in train
+[rank4]:     trainer.train()
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1539, in train
+[rank4]:     return inner_training_loop(
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1929, in _inner_training_loop
+[rank4]:     self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2302, in _maybe_log_save_evaluate
+[rank4]:     self._save_checkpoint(model, trial, metrics=metrics)
+[rank4]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/llava_trainer.py", line 249, in _save_checkpoint
+[rank4]:     super(LLaVATrainer, self)._save_checkpoint(model, trial, metrics)
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2382, in _save_checkpoint
+[rank4]:     self._save_optimizer_and_scheduler(staging_output_dir)
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2488, in _save_optimizer_and_scheduler
+[rank4]:     self.model_wrapped.save_checkpoint(output_dir, exclude_frozen_parameters=True)
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3279, in save_checkpoint
+[rank4]:     self._save_zero_checkpoint(save_dir, tag)
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3640, in _save_zero_checkpoint
+[rank4]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
+[rank4]:     torch.save(state_dict, path)
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 943, in save
+[rank4]:     with _open_zipfile_writer(f) as opened_zipfile:
+[rank4]:          ^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 784, in __exit__
+[rank4]:     self.file_like.write_end_of_file()
+[rank4]: RuntimeError: [enforce fail at inline_container.cc:626] . unexpected pos 3072 vs 2964
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 944, in save
+[rank5]:     _save(
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 1216, in _save
+[rank5]:     zip_file.write_record(name, storage, num_bytes)
+[rank5]: RuntimeError: [enforce fail at inline_container.cc:815] . PytorchStreamWriter failed writing file data/1: file write failed
+
+[rank5]: During handling of the above exception, another exception occurred:
+
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train_mem.py", line 4, in <module>
+[rank5]:     train(attn_implementation="flash_attention_2")
+[rank5]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train.py", line 969, in train
+[rank5]:     trainer.train()
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1539, in train
+[rank5]:     return inner_training_loop(
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1929, in _inner_training_loop
+[rank5]:     self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2302, in _maybe_log_save_evaluate
+[rank5]:     self._save_checkpoint(model, trial, metrics=metrics)
+[rank5]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/llava_trainer.py", line 249, in _save_checkpoint
+[rank5]:     super(LLaVATrainer, self)._save_checkpoint(model, trial, metrics)
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2382, in _save_checkpoint
+[rank5]:     self._save_optimizer_and_scheduler(staging_output_dir)
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2488, in _save_optimizer_and_scheduler
+[rank5]:     self.model_wrapped.save_checkpoint(output_dir, exclude_frozen_parameters=True)
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3279, in save_checkpoint
+[rank5]:     self._save_zero_checkpoint(save_dir, tag)
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3640, in _save_zero_checkpoint
+[rank5]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
+[rank5]:     torch.save(state_dict, path)
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 943, in save
+[rank5]:     with _open_zipfile_writer(f) as opened_zipfile:
+[rank5]:          ^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 784, in __exit__
+[rank5]:     self.file_like.write_end_of_file()
+[rank5]: RuntimeError: [enforce fail at inline_container.cc:626] . unexpected pos 3072 vs 2964
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 944, in save
+[rank0]:     _save(
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 1216, in _save
+[rank0]:     zip_file.write_record(name, storage, num_bytes)
+[rank0]: RuntimeError: [enforce fail at inline_container.cc:815] . PytorchStreamWriter failed writing file data/2: file write failed
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train_mem.py", line 4, in <module>
+[rank0]:     train(attn_implementation="flash_attention_2")
+[rank0]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train.py", line 969, in train
+[rank0]:     trainer.train()
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1539, in train
+[rank0]:     return inner_training_loop(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1929, in _inner_training_loop
+[rank0]:     self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2302, in _maybe_log_save_evaluate
+[rank0]:     self._save_checkpoint(model, trial, metrics=metrics)
+[rank0]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/llava_trainer.py", line 249, in _save_checkpoint
+[rank0]:     super(LLaVATrainer, self)._save_checkpoint(model, trial, metrics)
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2382, in _save_checkpoint
+[rank0]:     self._save_optimizer_and_scheduler(staging_output_dir)
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2488, in _save_optimizer_and_scheduler
+[rank0]:     self.model_wrapped.save_checkpoint(output_dir, exclude_frozen_parameters=True)
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3279, in save_checkpoint
+[rank0]:     self._save_zero_checkpoint(save_dir, tag)
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3640, in _save_zero_checkpoint
+[rank0]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
+[rank0]:     torch.save(state_dict, path)
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 943, in save
+[rank0]:     with _open_zipfile_writer(f) as opened_zipfile:
+[rank0]:          ^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 784, in __exit__
+[rank0]:     self.file_like.write_end_of_file()
+[rank0]: RuntimeError: [enforce fail at inline_container.cc:626] . unexpected pos 170401152 vs 170401040
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 944, in save
+[rank6]:     _save(
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 1216, in _save
+[rank6]:     zip_file.write_record(name, storage, num_bytes)
+[rank6]: RuntimeError: [enforce fail at inline_container.cc:815] . PytorchStreamWriter failed writing file data/1: file write failed
+
+[rank6]: During handling of the above exception, another exception occurred:
+
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train_mem.py", line 4, in <module>
+[rank6]:     train(attn_implementation="flash_attention_2")
+[rank6]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train.py", line 969, in train
+[rank6]:     trainer.train()
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1539, in train
+[rank6]:     return inner_training_loop(
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1929, in _inner_training_loop
+[rank6]:     self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2302, in _maybe_log_save_evaluate
+[rank6]:     self._save_checkpoint(model, trial, metrics=metrics)
+[rank6]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/llava_trainer.py", line 249, in _save_checkpoint
+[rank6]:     super(LLaVATrainer, self)._save_checkpoint(model, trial, metrics)
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2382, in _save_checkpoint
+[rank6]:     self._save_optimizer_and_scheduler(staging_output_dir)
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2488, in _save_optimizer_and_scheduler
+[rank6]:     self.model_wrapped.save_checkpoint(output_dir, exclude_frozen_parameters=True)
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3279, in save_checkpoint
+[rank6]:     self._save_zero_checkpoint(save_dir, tag)
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3640, in _save_zero_checkpoint
+[rank6]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
+[rank6]:     torch.save(state_dict, path)
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 943, in save
+[rank6]:     with _open_zipfile_writer(f) as opened_zipfile:
+[rank6]:          ^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 784, in __exit__
+[rank6]:     self.file_like.write_end_of_file()
+[rank6]: RuntimeError: [enforce fail at inline_container.cc:626] . unexpected pos 3072 vs 2964
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 944, in save
+[rank1]:     _save(
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 1216, in _save
+[rank1]:     zip_file.write_record(name, storage, num_bytes)
+[rank1]: RuntimeError: [enforce fail at inline_container.cc:815] . PytorchStreamWriter failed writing file data/1: file write failed
+
+[rank1]: During handling of the above exception, another exception occurred:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train_mem.py", line 4, in <module>
+[rank1]:     train(attn_implementation="flash_attention_2")
+[rank1]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train.py", line 969, in train
+[rank1]:     trainer.train()
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1539, in train
+[rank1]:     return inner_training_loop(
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1929, in _inner_training_loop
+[rank1]:     self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2302, in _maybe_log_save_evaluate
+[rank1]:     self._save_checkpoint(model, trial, metrics=metrics)
+[rank1]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/llava_trainer.py", line 249, in _save_checkpoint
+[rank1]:     super(LLaVATrainer, self)._save_checkpoint(model, trial, metrics)
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2382, in _save_checkpoint
+[rank1]:     self._save_optimizer_and_scheduler(staging_output_dir)
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2488, in _save_optimizer_and_scheduler
+[rank1]:     self.model_wrapped.save_checkpoint(output_dir, exclude_frozen_parameters=True)
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3279, in save_checkpoint
+[rank1]:     self._save_zero_checkpoint(save_dir, tag)
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3640, in _save_zero_checkpoint
+[rank1]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
+[rank1]:     torch.save(state_dict, path)
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 943, in save
+[rank1]:     with _open_zipfile_writer(f) as opened_zipfile:
+[rank1]:          ^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 784, in __exit__
+[rank1]:     self.file_like.write_end_of_file()
+[rank1]: RuntimeError: [enforce fail at inline_container.cc:626] . unexpected pos 3072 vs 2964
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 944, in save
+[rank7]:     _save(
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 1216, in _save
+[rank7]:     zip_file.write_record(name, storage, num_bytes)
+[rank7]: RuntimeError: [enforce fail at inline_container.cc:815] . PytorchStreamWriter failed writing file data/1: file write failed
+
+[rank7]: During handling of the above exception, another exception occurred:
+
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train_mem.py", line 4, in <module>
+[rank7]:     train(attn_implementation="flash_attention_2")
+[rank7]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/train.py", line 969, in train
+[rank7]:     trainer.train()
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1539, in train
+[rank7]:     return inner_training_loop(
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 1929, in _inner_training_loop
+[rank7]:     self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2302, in _maybe_log_save_evaluate
+[rank7]:     self._save_checkpoint(model, trial, metrics=metrics)
+[rank7]:   File "/home/zl986/backdoor-test/LLaVA/llava/train/llava_trainer.py", line 249, in _save_checkpoint
+[rank7]:     super(LLaVATrainer, self)._save_checkpoint(model, trial, metrics)
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2382, in _save_checkpoint
+[rank7]:     self._save_optimizer_and_scheduler(staging_output_dir)
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/transformers/trainer.py", line 2488, in _save_optimizer_and_scheduler
+[rank7]:     self.model_wrapped.save_checkpoint(output_dir, exclude_frozen_parameters=True)
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3279, in save_checkpoint
+[rank7]:     self._save_zero_checkpoint(save_dir, tag)
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/engine.py", line 3640, in _save_zero_checkpoint
+[rank7]:     self.checkpoint_engine.save(zero_sd, zero_checkpoint_name)
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/deepspeed/runtime/checkpoint_engine/torch_checkpoint_engine.py", line 22, in save
+[rank7]:     torch.save(state_dict, path)
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 943, in save
+[rank7]:     with _open_zipfile_writer(f) as opened_zipfile:
+[rank7]:          ^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/zl986/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 784, in __exit__
+[rank7]:     self.file_like.write_end_of_file()
+[rank7]: RuntimeError: [enforce fail at inline_container.cc:626] . unexpected pos 3072 vs 2964
+
